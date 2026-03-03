@@ -1,0 +1,99 @@
+{
+  "acct_id": "ACCT-5A489731",
+  "co_name": "Ben's Electric Solutions Team",
+  "co_phone": null,
+  "co_addr": null,
+  "timezone": null,
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Service Calls",
+    "Scheduling Appointments",
+    "Quotes/Estimates"
+  ],
+  "emrg_triggers": [
+    "Emergency calls after hours from GNM Pressure Washing (property manager for Chevron and SOs gas stations)"
+  ],
+  "emrg_routing": {
+    "primary_name": "Ben",
+    "primary_ph": null,
+    "secondary_name": null,
+    "secondary_ph": null,
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "transfer_to_human",
+    "contact_name": "Ben",
+    "contact_ph": null,
+    "notes": "During business hours, Clara is the first point of contact. If a caller requests to speak with a human, the call will be transferred to Ben's second number. Until the second number is active, calls will forward to Clara if Ben does not answer or declines on his main business line."
+  },
+  "xfer_rules": {
+    "timeout_sec": null,
+    "retry_count": null,
+    "fail_msg": null
+  },
+  "integrations": [
+    {
+      "type": "email_notification",
+      "address": "info@bendselectricsolutionsteam.com"
+    },
+    {
+      "type": "sms_notification",
+      "number": null
+    }
+  ],
+  "aft_hrs_flow": "For calls identified as emergencies from GNM Pressure Washing, patch through to Ben's second number. For all other after-hours calls, inform callers that the business will get back to them on the next business day.",
+  "biz_hrs_flow": "Clara will act as the first point of contact, answering general inquiries based on the website and provided service details. If asked about fees, Clara will mention the service call fee of $150 (covers first half-hour) and the subsequent rate of $98/hour charged in half-hour increments ($49/half-hour). If a caller requests to speak with a human, the call will be transferred to Ben's second number.",
+  "open_qs": [
+    "What is the exact main business phone number Clara should receive calls from?",
+    "What is the IANA timezone for Ben's Electric Solutions Team (e.g., America/Los_Angeles, America/New_York) for accurate scheduling and operations?",
+    "Please confirm the exact business opening time for Monday-Friday: 08:00 AM or 08:35 AM?",
+    "What is Ben's dedicated 'second number' for emergency call transfers?",
+    "What is Ben's dedicated 'second number' for non-emergency call transfers during business hours?",
+    "What is the desired timeout in seconds before a call transfer attempt is considered failed?",
+    "How many times should Clara attempt to transfer a call if the initial attempt fails?",
+    "What message should Clara play if a call transfer ultimately fails?",
+    "What is the exact phone number to send SMS notifications to?",
+    "What is the full business address for Ben's Electric Solutions Team?",
+    "Please provide the exact customer name(s), property name(s), addresses, and primary contact details (including phone and email if available) for GNM Pressure Washing and any specific properties they manage that qualify for after-hours emergency service."
+  ],
+  "notes": "Service call fee: $150 call-out fee (covers the first half-hour on-site). Subsequent hourly rate: $98/hour, charged in half-hour increments ($49/half-hour). Clara should only mention fees if explicitly asked. Ben is currently the sole person taking incoming client calls. Ben plans to set up a 'second number' for personal use, which will be used for Clara to transfer calls to him.",
+  "memo_ver": "v1_demo",
+  "created_at": "2026-03-03T17:44:23.334645+00:00",
+  "updated_at": null
+}

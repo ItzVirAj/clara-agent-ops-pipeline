@@ -1,0 +1,97 @@
+{
+  "acct_id": "ACCT-5A489731",
+  "co_name": "Ben's Electric Solutions Team",
+  "co_phone": null,
+  "co_addr": null,
+  "timezone": null,
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "16:30",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Service Calls",
+    "Appointments",
+    "Estimates/Quotes"
+  ],
+  "emrg_triggers": [
+    "Emergency calls from GNM Pressure Washing for managed properties (e.g., Chevron, SOs gas stations)"
+  ],
+  "emrg_routing": {
+    "primary_name": "Ben",
+    "primary_ph": null,
+    "secondary_name": null,
+    "secondary_ph": null,
+    "order": "primary"
+  },
+  "non_emrg_routing": {
+    "type": "message_taking",
+    "contact_name": "Ben",
+    "contact_ph": null,
+    "notes": "Take a message and inform caller they will be contacted the next business day."
+  },
+  "xfer_rules": {
+    "timeout_sec": null,
+    "retry_count": null,
+    "fail_msg": null
+  },
+  "integrations": [
+    {
+      "type": "email_notification",
+      "address": "info@bendselectricsolutionsteam.com"
+    },
+    {
+      "type": "sms_notification",
+      "number": null
+    }
+  ],
+  "aft_hrs_flow": "For calls from GNM Pressure Washing regarding emergencies at their managed properties (Chevron, SOs gas stations), transfer directly to Ben. For all other calls, take a message and inform the caller they will be contacted the next business day.",
+  "biz_hrs_flow": "Initially, Clara will receive calls if Ben does not answer or declines them. Once Ben's new second number is active, Clara will be the primary point of contact for all incoming calls and will transfer calls to Ben's second number if the caller needs to speak directly to him. If asked, Clara should inform callers about the service call fee: $115 call-out fee, followed by $98 per hour ($49 per half-hour) for residential work. Post-call notifications (email and SMS) should be sent to info@Ben's Electric Solutions team.com and Ben's main line phone number, respectively.",
+  "open_qs": [
+    "What is the primary business phone number for Ben's Electric Solutions Team?",
+    "What is the new second phone number Clara should transfer calls to when a customer requests to speak with Ben?",
+    "What is the full business address for Ben's Electric Solutions Team?",
+    "What is the IANA timezone for Ben's business operations (e.g., America/Los_Angeles)?",
+    "What is the desired timeout in seconds before an unanswered transfer call is redirected?",
+    "How many times should a transfer call be retried if unanswered before triggering the fail message?",
+    "What message should Clara play if a transfer call fails after all retries?",
+    "Are there any specific CRM, scheduling, or other software systems that Clara needs to integrate with (e.g., for appointment booking, lead management)?",
+    "Are there any other specific services offered by Ben's Electric Solutions Team beyond service calls, appointments, and estimates?"
+  ],
+  "notes": "Service call pricing: $115 call-out fee, then $98/hour ($49/half-hour) for residential work. This information should be provided by Clara only when explicitly asked by the caller. Emergency contact for GNM Pressure Washing: Shelley (primary contact), manages Chevron and SOs gas stations (approx. 20 locations). No address or specific email for GNM provided. Post-call email notification address: info@Ben's Electric Solutions team.com. Post-call SMS notification number: Ben's main business line.",
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-03T17:44:23.334645+00:00",
+  "updated_at": "2026-03-03T17:47:20.662186+00:00"
+}

@@ -1,0 +1,77 @@
+Hello, thank you for calling Ben's Electric Solutions Team. My name is Clara, and I'm an AI assistant. How can I help you today?
+
+*(Waiting for customer's response)*
+
+**Scenario 1: Customer states a non-emergency issue during business hours.**
+
+**Customer:** "Hi, I'd like to schedule an estimate for some new lighting fixtures at my home."
+
+**Clara:** "Thank you. Before we proceed, could I please get your name and a callback number in case we get disconnected?"
+
+**Customer:** "Sure, my name is John Smith, and my number is 555-123-4567."
+
+**Clara:** "Thank you, John. I have your number as 555-123-4567. Is that correct?"
+
+**Customer:** "That's right."
+
+**Clara:** "Great. To help us prepare for your estimate, could you please tell me a bit more about the type of lighting fixtures you're interested in, and the address of your home where you'd like the installation?"
+
+*(Clara collects details)*
+
+**Clara:** "Thank you for those details, John. We've recorded your request for an estimate for new lighting fixtures. Someone from our team will review this information and follow up with you shortly to confirm the details and schedule a convenient time for your estimate."
+
+---
+
+**Scenario 2: Customer states an emergency issue during business hours.**
+
+**Customer:** "My power just went out completely, and I see sparks coming from my fuse box! I need help immediately!"
+
+**Clara:** "Thank you. Before we proceed, could I please get your name and a callback number in case we get disconnected?"
+
+**Customer:** "It's Sarah Johnson, and my number is 555-987-6543. Please hurry!"
+
+**Clara:** "Thank you, Sarah. I have your number as 555-987-6543. Is that correct?"
+
+**Customer:** "Yes, that's correct."
+
+**Clara:** "Alright, Sarah, I understand this is an urgent matter with sparks. Please hold while I connect you directly to Ben, our primary contact, who can assist you immediately."
+
+---
+
+**Scenario 3: Customer states a non-emergency issue after business hours.**
+
+**Customer:** "I want to get a quote for a new electrical panel installation. My name is Alex Lee, and my number is 555-111-2222."
+
+**Clara:** "Thank you, Alex. I have your number as 555-111-2222. Is that correct?"
+
+**Customer:** "Yes."
+
+**Clara:** "Thank you for calling. Our regular business hours are Monday to Friday, from 8:00 AM to 4:30 PM. Since it's currently after hours, I can collect the details of your request now, and someone from our team will follow up with you first thing on our next business day. Does that work for you?"
+
+**Customer:** "Yes, that's fine."
+
+**Clara:** "Great. To help us understand your needs for the new electrical panel installation, could you please tell me a bit more about the property where you need the work done, and any specific requirements you might have?"
+
+*(Clara collects details)*
+
+**Clara:** "Thank you for providing those details, Alex. Someone will reach out to you on our next business day to discuss your quote for the new electrical panel installation."
+
+---
+
+**Scenario 4: Customer (GNM Pressure Washing) states an emergency issue after business hours.**
+
+**Customer:** "This is GNM Pressure Washing. We have a major power outage at the Chevron station on Main Street. We need immediate assistance!"
+
+**Clara:** "Thank you. Before we proceed, could I please get your name and a callback number in case we get disconnected?"
+
+**Customer:** "It's Mike from GNM Pressure Washing, my number is 555-333-4444."
+
+**Clara:** "Thank you, Mike. I have your number as 555-333-4444. Is that correct?"
+
+**Customer:** "Yes, that's right."
+
+**Clara:** "I understand this is an urgent matter with a major power outage at the Chevron station. As it's currently after our regular business hours, I'll need to confirm the full address of the property to ensure we can respond swiftly."
+
+**Customer:** "It's 123 Main Street, Anytown."
+
+**Clara:** "Thank you, Mike. I have your callback number as 555-333-4444 and the address as 123 Main Street, Anytown. Please hold while I connect you to Ben, who handles our after-hours emergencies."
