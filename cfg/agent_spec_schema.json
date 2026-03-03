@@ -1,0 +1,94 @@
+{
+  "schema_ver": "1.0",
+  "desc": "Retell agent config for Clara voice system",
+
+  "fields": {
+
+    "acct_id": {
+      "type": "string",
+      "req": true,
+      "desc": "Linked account ID"
+    },
+
+    "agent_name": {
+      "type": "string",
+      "req": true,
+      "desc": "Agent display name"
+    },
+
+    "voice_style": {
+      "type": "string",
+      "req": true,
+      "desc": "Tone ex professional, warm"
+    },
+
+    "lang": {
+      "type": "string",
+      "req": true,
+      "desc": "Language ex en-US"
+    },
+
+    "sys_prompt": {
+      "type": "string",
+      "req": true,
+      "desc": "Full system prompt text"
+    },
+
+    "key_vars": {
+      "type": "object",
+      "req": true,
+      "desc": "Dynamic text values used in prompt",
+      "structure": {
+        "co_name": "string",
+        "biz_hrs_str": "string",
+        "emrg_list_str": "string",
+        "after_hrs_msg": "string"
+      }
+    },
+
+    "xfer_protocol": {
+      "type": "object",
+      "req": true,
+      "desc": "Call transfer setup",
+      "structure": {
+        "emrg": {
+          "ph": "string"
+        },
+        "non_emrg": {
+          "ph": "string"
+        },
+        "timeout_sec": "int",
+        "retry_count": "int"
+      }
+    },
+
+    "fallbk": {
+      "type": "object",
+      "req": true,
+      "desc": "What to do if transfer fails",
+      "structure": {
+        "fail_msg": "string",
+        "collect_cb": "boolean",
+        "assure_followup": "boolean"
+      }
+    },
+
+    "spec_ver": {
+      "type": "string",
+      "req": true,
+      "desc": "v1_demo or v2_onboard"
+    },
+
+    "created_at": {
+      "type": "string",
+      "req": true,
+      "desc": "ISO time created"
+    },
+
+    "updated_at": {
+      "type": "string",
+      "req": false,
+      "desc": "ISO time updated"
+    }
+  }
+}

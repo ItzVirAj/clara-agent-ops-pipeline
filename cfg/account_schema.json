@@ -1,0 +1,152 @@
+{
+  "schema_ver": "1.0",
+  "desc": "Client account memo for Clara voice agent setup",
+
+  "fields": {
+
+    "acct_id": {
+      "type": "string",
+      "req": true,
+      "desc": "Auto ID for this account"
+    },
+
+    "co_name": {
+      "type": "string",
+      "req": true,
+      "desc": "Company name"
+    },
+
+    "co_phone": {
+      "type": "string",
+      "req": false,
+      "desc": "Main company phone"
+    },
+
+    "co_addr": {
+      "type": "string",
+      "req": false,
+      "desc": "Office address"
+    },
+
+    "timezone": {
+      "type": "string",
+      "req": true,
+      "desc": "Timezone ex America/Chicago"
+    },
+
+    "biz_hrs": {
+      "type": "object",
+      "req": true,
+      "desc": "Open hours per day",
+      "structure": {
+        "mon": {"open": "HH:MM", "close": "HH:MM", "active": true},
+        "tue": {"open": "HH:MM", "close": "HH:MM", "active": true},
+        "wed": {"open": "HH:MM", "close": "HH:MM", "active": true},
+        "thu": {"open": "HH:MM", "close": "HH:MM", "active": true},
+        "fri": {"open": "HH:MM", "close": "HH:MM", "active": true},
+        "sat": {"open": "HH:MM", "close": "HH:MM", "active": false},
+        "sun": {"open": "HH:MM", "close": "HH:MM", "active": false}
+      }
+    },
+
+    "svcs": {
+      "type": "array",
+      "req": true,
+      "desc": "Services offered",
+      "items": "string"
+    },
+
+    "emrg_triggers": {
+      "type": "array",
+      "req": true,
+      "desc": "What counts as emergency",
+      "items": "string"
+    },
+
+    "emrg_routing": {
+      "type": "object",
+      "req": true,
+      "desc": "Emergency call routing",
+      "structure": {
+        "primary_name": "string",
+        "primary_ph": "string",
+        "secondary_name": "string",
+        "secondary_ph": "string",
+        "order": "string"
+      }
+    },
+
+    "non_emrg_routing": {
+      "type": "object",
+      "req": false,
+      "desc": "Non emergency routing",
+      "structure": {
+        "type": "transfer | msg_only",
+        "contact_name": "string",
+        "contact_ph": "string",
+        "notes": "string"
+      }
+    },
+
+    "xfer_rules": {
+      "type": "object",
+      "req": true,
+      "desc": "Transfer behavior",
+      "structure": {
+        "timeout_sec": "int",
+        "retry_count": "int",
+        "fail_msg": "string"
+      }
+    },
+
+    "integrations": {
+      "type": "array",
+      "req": false,
+      "desc": "External tools used",
+      "items": "string"
+    },
+
+    "aft_hrs_flow": {
+      "type": "string",
+      "req": false,
+      "desc": "After hours summary"
+    },
+
+    "biz_hrs_flow": {
+      "type": "string",
+      "req": false,
+      "desc": "Business hours summary"
+    },
+
+    "open_qs": {
+      "type": "array",
+      "req": false,
+      "desc": "Missing info from call",
+      "items": "string"
+    },
+
+    "notes": {
+      "type": "string",
+      "req": false,
+      "desc": "Extra context"
+    },
+
+    "memo_ver": {
+      "type": "string",
+      "req": true,
+      "desc": "v1_demo or v2_onboard"
+    },
+
+    "created_at": {
+      "type": "string",
+      "req": true,
+      "desc": "ISO time created"
+    },
+
+    "updated_at": {
+      "type": "string",
+      "req": false,
+      "desc": "ISO time updated"
+    }
+  }
+}
