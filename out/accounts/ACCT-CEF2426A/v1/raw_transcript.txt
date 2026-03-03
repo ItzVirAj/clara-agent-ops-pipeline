@@ -1,0 +1,7 @@
+Caller: Hi we are ABC Fire Protection based in Chicago.
+Rep: Great, what are your business hours?
+Caller: Monday to Friday 8am to 5pm Central time.
+Rep: And what counts as an emergency for you?
+Caller: Active fire alarm, sprinkler going off, anything life safety.
+Rep: Who do we route emergency calls to?
+Caller: Mike Johnson at 312-555-0101, backup is Sarah at 312-555-0202.
