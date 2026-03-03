@@ -41,22 +41,32 @@ def _biz_hrs_str(b):
 # ── build gemini prompt ───────────────────────────────────
 
 def _build_prompt(m):
-    co   = m.get("co_name","the company")
-    tz   = m.get("timezone","local time")
-    hrs  = _biz_hrs_str(m.get("biz_hrs",{}))
-    svcs = ", ".join(m.get("svcs",[])) or "service trade"
-    trg  = ", ".join(m.get("emrg_triggers",[])) or "not specified"
+    co  = m.get("co_name", "the company")
+    tz  = m.get("timezone", "local time")
+    hrs = _biz_hrs_str(m.get("biz_hrs", {}))
 
-    e    = m.get("emrg_routing",{})
-    x    = m.get("xfer_rules",{})
+    raw_svcs = m.get("svcs", [])
+    svcs = ", ".join(
+        s if isinstance(s, str) else str(s)
+        for s in raw_svcs
+    ) or "service trade"
 
-    pri_n = e.get("primary_name","on-call tech")
-    pri_p = e.get("primary_ph","PRIMARY_PHONE")
+    raw_trg = m.get("emrg_triggers", [])
+    trg = ", ".join(
+        t if isinstance(t, str) else str(t)
+        for t in raw_trg
+    ) or "not specified"
+
+    e = m.get("emrg_routing", {})
+    x = m.get("xfer_rules", {})
+
+    pri_n = e.get("primary_name", "on-call tech")
+    pri_p = e.get("primary_ph", "PRIMARY_PHONE")
     sec_n = e.get("secondary_name")
     sec_p = e.get("secondary_ph")
 
-    t_out = x.get("timeout_sec",30)
-    retry = x.get("retry_count",1)
+    t_out = x.get("timeout_sec", 30)
+    retry = x.get("retry_count", 1)
     fail  = x.get("fail_msg",
         f"I'm sorry, I couldn't reach our team. "
         f"Someone from {co} will follow up soon.")
@@ -67,7 +77,11 @@ def _build_prompt(m):
     )
 
     return f"""
-You are Clara, an AI phone agent for {co}.
+You are a voice agent prompt engineer for Clara Answers.
+
+Write a complete SYSTEM PROMPT for an AI voice agent named Clara working for {co}.
+The system prompt instructs Clara how to behave — it is NOT a greeting to a caller.
+Start with: "You are Clara, an AI phone agent for {co}."
 
 CONTEXT
 Company: {co}
@@ -79,59 +93,80 @@ Primary contact: {pri_n} at {pri_p}
 Timeout: {t_out}s | Retries: {retry}
 Fail message: "{fail}"
 
-INSTRUCTIONS
-- Greet → ask purpose → collect name + callback
-- Detect emergency vs non-emergency
+THE SYSTEM PROMPT MUST COVER:
 
-BUSINESS HOURS
-Emergency → transfer primary → secondary → fail message if needed
-Non-emergency → collect details → confirm follow-up
+1. IDENTITY
+   - Who Clara is and what company she represents
 
-AFTER HOURS
-Emergency → collect name + number + address → transfer → fail if needed
-Non-emergency → collect details → confirm next business day follow-up
+2. BUSINESS HOURS FLOW ({hrs} {tz})
+   - Greet caller → ask purpose → collect name + callback number
+   - Determine emergency vs non-emergency
+   - Emergency: attempt transfer to primary → secondary if no answer → fail message
+   - Non-emergency: collect details → confirm someone will follow up
+   - Ask if anything else → close warmly
 
-RULES
-- Never mention technical terms
-- Always repeat callback number
-- Stay calm and professional
-- Never invent company info
+3. AFTER HOURS FLOW
+   - Greet caller → ask purpose → confirm emergency?
+   - YES: collect name + number + address → attempt transfer → fail message if fails
+   - NO: collect details → confirm follow-up next business day
+   - Ask if anything else → close warmly
+
+4. RULES CLARA MUST FOLLOW
+   - Never mention function calls or technical terms to caller
+   - Always repeat callback number back to caller to confirm
+   - Never put caller on hold without warning
+   - Stay calm and professional at all times
+   - Never invent information about the company
+   - Only mention service pricing if caller asks
+
+FORMAT RULES
+- Write as a direct system prompt in second person (You are Clara...)
+- Use clear section headers
+- Be specific with the business details provided
+- Minimum 300 words
+- Do not add any explanation outside the prompt itself
 """.strip()
 
 
 # ── build agent spec ──────────────────────────────────────
 
 def _build_spec(m, sys_prompt, ver):
-    co = m.get("co_name","the company")
-    hrs_str = _biz_hrs_str(m.get("biz_hrs",{}))
-    e = m.get("emrg_routing",{})
-    ne = m.get("non_emrg_routing",{})
-    x = m.get("xfer_rules",{})
+    co      = m.get("co_name", "the company")
+    hrs_str = _biz_hrs_str(m.get("biz_hrs", {}))
+    e       = m.get("emrg_routing", {})
+    ne      = m.get("non_emrg_routing", {})
+    x       = m.get("xfer_rules", {})
+
+    raw_trg = m.get("emrg_triggers", [])
+    emrg_str = ", ".join(
+        t if isinstance(t, str) else str(t)
+        for t in raw_trg
+    )
 
     return {
-        "acct_id": m["acct_id"],
-        "agent_name": f"Clara — {co}",
+        "acct_id"    : m["acct_id"],
+        "agent_name" : f"Clara — {co}",
         "voice_style": "professional, warm, concise",
-        "lang": "en-US",
-        "sys_prompt": sys_prompt,
-        "key_vars": {
-            "co_name": co,
-            "biz_hrs_str": hrs_str,
-            "emrg_list_str": ", ".join(m.get("emrg_triggers",[])),
+        "lang"       : "en-US",
+        "sys_prompt" : sys_prompt,
+        "key_vars"   : {
+            "co_name"      : co,
+            "biz_hrs_str"  : hrs_str,
+            "emrg_list_str": emrg_str,
             "after_hrs_msg": f"Our hours are {hrs_str}. We will follow up next business day."
         },
         "xfer_protocol": {
-            "emrg": {"ph": e.get("primary_ph","")},
-            "non_emrg": {"ph": ne.get("contact_ph","")},
-            "timeout_sec": x.get("timeout_sec",30),
-            "retry_count": x.get("retry_count",1)
+            "emrg"       : {"ph": e.get("primary_ph", "")},
+            "non_emrg"   : {"ph": ne.get("contact_ph", "")},
+            "timeout_sec": x.get("timeout_sec", 30),
+            "retry_count": x.get("retry_count", 1)
         },
         "fallbk": {
-            "fail_msg": x.get("fail_msg","Transfer failed. We will follow up."),
-            "collect_cb": True,
+            "fail_msg"       : x.get("fail_msg", "Transfer failed. We will follow up."),
+            "collect_cb"     : True,
             "assure_followup": True
         },
-        "spec_ver": ver,
+        "spec_ver"  : ver,
         "created_at": utc_now(),
         "updated_at": None
     }
@@ -140,8 +175,8 @@ def _build_spec(m, sys_prompt, ver):
 # ── main entry ────────────────────────────────────────────
 
 def run_prmpt_gen(memo: dict) -> dict:
-    acct_id = memo["acct_id"]
-    memo_ver = memo.get("memo_ver","v1_demo")
+    acct_id  = memo["acct_id"]
+    memo_ver = memo.get("memo_ver", "v1_demo")
     spec_ver = "v1_demo" if "v1" in memo_ver else "v2_onboard"
     out_ver  = "v1" if "v1" in memo_ver else "v2"
 
@@ -149,8 +184,8 @@ def run_prmpt_gen(memo: dict) -> dict:
 
     client = _gmni()
     sys_prompt = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=_build_prompt(memo)
+        model    = "gemini-2.5-flash",
+        contents = _build_prompt(memo)
     ).text.strip()
 
     spec = _build_spec(memo, sys_prompt, spec_ver)
@@ -159,4 +194,5 @@ def run_prmpt_gen(memo: dict) -> dict:
     write_json(spec, acct_dir / "agent_spec.json")
     (acct_dir / "agent_prompt.txt").write_text(sys_prompt, encoding="utf-8")
 
+    lgr.info(f"spec + prompt saved → {acct_dir}")
     return spec
