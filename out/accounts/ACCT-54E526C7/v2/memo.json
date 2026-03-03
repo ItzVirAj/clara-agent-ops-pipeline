@@ -1,0 +1,91 @@
+{
+  "acct_id": "ACCT-54E526C7",
+  "co_name": "Ben's Electric Solutions team",
+  "co_phone": null,
+  "co_addr": null,
+  "timezone": null,
+  "biz_hrs": {
+    "mon": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "tue": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "wed": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "thu": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "fri": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Electrical services for new clients, small jobs, and service calls",
+    "Emergency services for existing builders",
+    "Emergency services for GNM Pressure Washing (property management for Chevron and SOs gas stations)"
+  ],
+  "emrg_triggers": [
+    "Emergency calls from existing builders",
+    "Emergency calls from GNM Pressure Washing (property manager for Chevron and SOs gas stations)"
+  ],
+  "emrg_routing": {
+    "primary_name": "Ben",
+    "primary_ph": null,
+    "secondary_name": null,
+    "secondary_ph": null,
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "Transfer to human",
+    "contact_name": "Ben",
+    "contact_ph": null,
+    "notes": "Initially, calls are forwarded to Clara if Ben does not answer or declines. Once Ben's second number is active, Clara will be the first point of contact and transfer calls to it if a customer requests to speak with a human. Ben currently handles all incoming calls himself."
+  },
+  "xfer_rules": {
+    "timeout_sec": null,
+    "retry_count": null,
+    "fail_msg": null
+  },
+  "integrations": [],
+  "aft_hrs_flow": "After-hours emergency calls from existing builders or GNM Pressure Washing (for Chevron/SOs gas stations) will be patched through to Ben's second number. All other after-hours calls will be informed that the business will get back to them on the next business day.",
+  "biz_hrs_flow": "Initially, calls will be forwarded to Clara if Ben does not answer or declines the call. Once Ben's second number is active, Clara will become the primary point of contact for incoming calls and will transfer to Ben's second number if a customer requests to speak with a human.",
+  "open_qs": [
+    "What is Ben's main business phone number?",
+    "What is the business's operating timezone (IANA format)?",
+    "What is the phone number for Ben's second line, to which emergency and non-emergency calls should be transferred?",
+    "Is there a secondary contact for emergency routing?",
+    "What is the secondary contact's phone number for emergency routing?",
+    "If there are multiple emergency contacts, what is the preferred routing order?",
+    "What is the timeout in seconds for call transfers before retrying or failing?",
+    "How many times should Clara attempt to transfer a call if the first attempt fails?",
+    "What message should Clara play if a call transfer ultimately fails?",
+    "Are there any calendar, CRM, or other systems that Clara should integrate with for scheduling or record-keeping?",
+    "For after-hours non-emergency calls, what specific message or action should Clara take (e.g., take a message, provide specific business hours, direct to website)?"
+  ],
+  "notes": "Ben uses an Android device. Ben's current business line is also his personal number. Ben is setting up a second number which will be used for Clara to transfer calls to. Notification email is info@Ben's Electric Solutions team.com. SMS notifications will be sent to Ben's current main business line. The service call fee is $115 for a call-out, plus $98/hour for residential work, billed in half-hour increments ($49/half hour) after the initial call-out. Clara should mention this fee only if customers ask, not proactively. Emergency customer details: GNM Pressure Washing (property management company) manages approximately 20 Chevron and SOs gas stations, primary contact Shelley. Ben will inform Shelley about the service. A follow-up meeting is scheduled for Friday at 2:00 PM (local time, timezone unknown), expected to be 15-20 minutes, to review test calls and the dashboard. The 12-month term on the Docusign means the price will remain the same after the initial 3 months if Ben continues. Clara's AI will be trained using the company's website.",
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-03T17:35:54.311098+00:00",
+  "updated_at": "2026-03-03T17:38:53.227286+00:00"
+}

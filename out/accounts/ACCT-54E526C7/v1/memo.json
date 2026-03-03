@@ -1,0 +1,85 @@
+{
+  "acct_id": "ACCT-54E526C7",
+  "co_name": "Ben's Electric Solutions Team",
+  "co_phone": null,
+  "co_addr": null,
+  "timezone": null,
+  "biz_hrs": {
+    "mon": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "tue": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "wed": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "thu": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "fri": {
+      "open": "08:35",
+      "close": "16:30",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Electrical Service Calls: Initial call-out fee is $150, which covers the first half-hour on site. Subsequent time is billed at $98 per hour for residential, in half-hour increments. Clara should mention these fees when customers ask about pricing before booking."
+  ],
+  "emrg_triggers": [
+    "Callers identifying as GNM Pressure Washing (property manager for Chevron and SOs gas stations) reporting an emergency."
+  ],
+  "emrg_routing": {
+    "primary_name": "Ben",
+    "primary_ph": null,
+    "secondary_name": null,
+    "secondary_ph": null,
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "take_message",
+    "contact_name": "Ben",
+    "contact_ph": null,
+    "notes": "Email notifications to info@bendselectricsolutionsteam.com. SMS notifications to Ben's main business line."
+  },
+  "xfer_rules": {
+    "timeout_sec": null,
+    "retry_count": null,
+    "fail_msg": null
+  },
+  "integrations": [],
+  "aft_hrs_flow": "take_message_and_notify",
+  "biz_hrs_flow": "answer_calls_with_transfer_option",
+  "open_qs": [
+    "What is the main business phone number for calls, forwarding, and SMS notifications?",
+    "What is the business's timezone in IANA format (e.g., America/New_York)?",
+    "What is Ben's new personal phone number ('second number') for call transfers?",
+    "What is the desired order for emergency call routing (e.g., simultaneous, sequential)?",
+    "What is the timeout duration in seconds for call transfers before routing fails?",
+    "How many times should the system attempt to transfer a call before failing?",
+    "What message should be played if a call transfer attempt fails?",
+    "Are there any other systems (e.g., CRM, scheduling software) that need to be integrated with Clara?"
+  ],
+  "notes": null,
+  "memo_ver": "v1_demo",
+  "created_at": "2026-03-03T17:35:54.311098+00:00",
+  "updated_at": null
+}
