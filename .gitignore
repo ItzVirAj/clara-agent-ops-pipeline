@@ -1,0 +1,34 @@
+# virtual env
+venv/
+
+# env secrets
+.env
+cfg/.env
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# data files (raw audio - can be large)
+data/demo/*.mp3
+data/demo/*.wav
+data/demo/*.m4a
+data/onboard/*.mp3
+data/onboard/*.wav
+data/onboard/*.m4a
+
+# logs
+logs/*.log
+
+# sqlite db
+*.db
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
