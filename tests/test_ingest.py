@@ -1,66 +1,47 @@
 # tests/test_ingest.py
-import sys, json
+# tests ingestion layer — file detection, id generation, text loading
+
+import sys
 sys.path.insert(0, ".")
 
-from pipe.ingest    import run_ingest
-from pipe.extract   import run_extract
-from pipe.prmpt_gen import run_prmpt_gen
-from pipe.store     import reg_v1, reg_v2, get_acct, list_accts
-from pipe.patch     import run_patch
+from pipe.utils  import detect_src_type, gen_acct_id, utc_now
+from pathlib     import Path
 
-# ─────────────────────────────────────────────
-# PIPELINE A — demo call
-# ─────────────────────────────────────────────
-print("\n══ PIPELINE A ══")
-ing_v1  = run_ingest(fpath="data/demo/test_demo.txt", call_type="demo")
-memo_v1 = run_extract(ing_v1)
-spec_v1 = run_prmpt_gen(memo_v1)
-reg_v1(memo_v1, spec_v1)
+print("── test_ingest ──")
 
-acct_id = memo_v1["acct_id"]
-print(f"\n  acct_id : {acct_id}")
-print(f"  status  : {get_acct(acct_id)['status']}")
+# test 1: audio detection
+for ext in [".mp3", ".wav", ".m4a", ".flac"]:
+    fake = Path(f"fake_file{ext}")
+    assert detect_src_type(fake) == "audio", f"failed for {ext}"
+print("audio extensions detected")
 
-# ─────────────────────────────────────────────
-# PIPELINE B — onboarding call (simulated)
-# we reuse same file but pretend it's onboard
-# with extra fields filled in
-# ─────────────────────────────────────────────
-print("\n══ PIPELINE B — patch simulation ══")
+# test 2: transcript detection
+for ext in [".txt", ".json"]:
+    fake = Path(f"fake_file{ext}")
+    assert detect_src_type(fake) == "transcript", f"failed for {ext}"
+print("transcript extensions detected")
 
-# simulate onboard extraction adding new fields
-v2_extra = {
-    "co_phone"  : "312-555-0000",
-    "co_addr"   : "123 Main St, Chicago IL 60601",
-    "svcs"      : ["fire alarm inspection", "sprinkler service", "suppression systems"],
-    "xfer_rules": {
-        "timeout_sec": 30,
-        "retry_count": 2,
-        "fail_msg"   : "I'm sorry, I couldn't reach our team. Someone will call you back shortly."
-    },
-    "non_emrg_routing": {
-        "type"        : "transfer",
-        "contact_name": "Office",
-        "contact_ph"  : "312-555-0000",
-        "notes"       : "transfer to main office line"
-    },
-    "aft_hrs_flow" : "After hours: check emergency → transfer on-call → fallback message",
-    "biz_hrs_flow" : "Business hours: route to office → transfer tech if needed",
-    "integrations" : ["ServiceTrade"],
-    "open_qs"      : []
-}
+# test 3: unknown extension raises
+try:
+    detect_src_type(Path("fake.xyz"))
+    assert False, "should have raised"
+except ValueError:
+    pass
+print("unknown extension raises ValueError")
 
-v2_memo_raw, changelog = run_patch(acct_id, v2_extra)
-spec_v2 = run_prmpt_gen(v2_memo_raw)
-reg_v2(v2_memo_raw, spec_v2)
+# test 4: acct_id format
+for _ in range(5):
+    aid = gen_acct_id()
+    assert aid.startswith("ACCT-"),       f"wrong prefix: {aid}"
+    assert len(aid) == 13,                f"wrong length: {aid}"
+    assert aid[5:].isalnum(),             f"not alphanumeric: {aid}"
+    assert aid[5:] == aid[5:].upper(),    f"not uppercase: {aid}"
+print("acct_id format correct")
 
-print(f"\n  changes  : {changelog['total_changes']}")
-print(f"  status   : {get_acct(acct_id)['status']}")
+# test 5: utc_now returns iso string
+ts = utc_now()
+assert "T"  in ts, "not ISO format"
+assert "+"  in ts or "Z" in ts, "no timezone info"
+print("utc_now returns ISO timestamp")
 
-print("\n── changelog ──")
-for c in changelog["changes"]:
-    print(f"  [{c['action']}] {c['field']}")
-
-print("\n── all accounts in db ──")
-for a in list_accts():
-    print(f"  {a['acct_id']} | {a['co_name']} | {a['status']}")
+print("\nall ingest tests passed")
