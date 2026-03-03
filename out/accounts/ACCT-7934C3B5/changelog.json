@@ -1,0 +1,107 @@
+{
+  "acct_id": "ACCT-7934C3B5",
+  "patch_at": "2026-03-03T16:14:14.088433+00:00",
+  "v1_memo": "out\\accounts\\ACCT-7934C3B5\\v1\\memo.json",
+  "total_changes": 13,
+  "changes": [
+    {
+      "field": "co_phone",
+      "action": "filled",
+      "v1": null,
+      "v2": "312-555-0000"
+    },
+    {
+      "field": "co_addr",
+      "action": "filled",
+      "v1": null,
+      "v2": "123 Main St, Chicago IL 60601"
+    },
+    {
+      "field": "svcs",
+      "action": "filled",
+      "v1": [],
+      "v2": [
+        "fire alarm inspection",
+        "sprinkler service",
+        "suppression systems"
+      ]
+    },
+    {
+      "field": "xfer_rules.timeout_sec",
+      "action": "filled",
+      "v1": null,
+      "v2": 30
+    },
+    {
+      "field": "xfer_rules.retry_count",
+      "action": "filled",
+      "v1": null,
+      "v2": 2
+    },
+    {
+      "field": "xfer_rules.fail_msg",
+      "action": "filled",
+      "v1": null,
+      "v2": "I'm sorry, I couldn't reach our team. Someone will call you back shortly."
+    },
+    {
+      "field": "non_emrg_routing.type",
+      "action": "filled",
+      "v1": null,
+      "v2": "transfer"
+    },
+    {
+      "field": "non_emrg_routing.contact_name",
+      "action": "filled",
+      "v1": null,
+      "v2": "Office"
+    },
+    {
+      "field": "non_emrg_routing.contact_ph",
+      "action": "filled",
+      "v1": null,
+      "v2": "312-555-0000"
+    },
+    {
+      "field": "non_emrg_routing.notes",
+      "action": "filled",
+      "v1": null,
+      "v2": "transfer to main office line"
+    },
+    {
+      "field": "aft_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "After hours: check emergency \u2192 transfer on-call \u2192 fallback message"
+    },
+    {
+      "field": "biz_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "Business hours: route to office \u2192 transfer tech if needed"
+    },
+    {
+      "field": "integrations",
+      "action": "filled",
+      "v1": [],
+      "v2": [
+        "ServiceTrade"
+      ]
+    }
+  ],
+  "open_qs_remaining": [
+    "What is the primary business phone number for ABC Fire Protection?",
+    "What is the full business address for ABC Fire Protection?",
+    "What specific services does ABC Fire Protection offer that the AI voice agent should be able to assist customers with or answer questions about?",
+    "When an emergency call is routed, should the agent first call Mike Johnson and then Sarah if Mike doesn't answer, or should they be contacted simultaneously, or in a different order?",
+    "How should non-emergency calls be handled or routed?",
+    "What is the phone number for non-emergency call routing?",
+    "Who should non-emergency calls be routed to?",
+    "If a call is transferred to a human agent, how many seconds should the system wait before considering the transfer failed?",
+    "If a transfer attempt fails, how many times should the system retry the transfer?",
+    "What message should be played to the caller if all transfer attempts fail?",
+    "Are there any specific CRM, ticketing, or scheduling systems (e.g., Salesforce, Zendesk, Calendly) that the AI voice agent needs to integrate with?",
+    "What should the AI voice agent do for calls received outside of business hours (Monday to Friday, 8 AM to 5 PM Central time)?",
+    "What is the main flow or purpose of the AI voice agent during business hours (e.g., answer FAQs, book appointments, route calls)?"
+  ]
+}
