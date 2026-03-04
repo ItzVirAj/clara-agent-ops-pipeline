@@ -317,3 +317,5 @@
 2026-03-04 12:34:53 | run_batch  | INFO    | batch report saved → outputs\batch_report.json
 2026-03-04 12:34:53 | run_batch  | INFO    | ═══ BATCH DONE ═══
 2026-03-04 12:34:53 | run_batch  | INFO    | total: 1 | ok: 1 | failed: 0
+2026-03-04 12:41:51 | task_push  | INFO    | pushing task | ACCT-D4F10BF2 | status: v1_done
+2026-03-04 12:41:53 | task_push  | INFO    | issue created → #1 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/1

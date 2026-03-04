@@ -15,6 +15,7 @@ from pipe.extract   import run_extract
 from pipe.prmpt_gen import run_prmpt_gen
 from pipe.store     import reg_v1
 from pipe.utils     import get_lgr
+from pipe.task_push import push_task
 
 lgr = get_lgr("run_demo")
 
@@ -26,7 +27,7 @@ def run_demo_pipeline(fpath: str) -> dict:
     memo = run_extract(ing)
     spec = run_prmpt_gen(memo)
     reg_v1(memo, spec)
-
+    push_task(memo, "v1_done")
     lgr.info(f"═══ PIPELINE A DONE  | acct_id: {memo['acct_id']} ═══")
 
     return {

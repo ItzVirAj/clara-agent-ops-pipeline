@@ -16,6 +16,7 @@ from pipe.patch     import run_patch
 from pipe.prmpt_gen import run_prmpt_gen
 from pipe.store     import reg_v2, get_acct
 from pipe.utils     import get_lgr
+from pipe.task_push import push_task
 
 lgr = get_lgr("run_onboard")
 
@@ -41,7 +42,7 @@ def run_onboard_pipeline(fpath: str, acct_id: str) -> dict:
     spec_v2 = run_prmpt_gen(v2_memo)
 
     # register v2
-    reg_v2(v2_memo, spec_v2)
+    push_task(v2_memo, "v2_done", changelog)
 
     lgr.info(f"═══ PIPELINE B DONE  | acct_id: {acct_id} ═══")
 
