@@ -50,9 +50,9 @@ def run_onboard_pipeline(fpath: str, acct_id: str) -> dict:
         "co_name"    : v2_memo.get("co_name"),
         "changes"    : changelog["total_changes"],
         "open_qs"    : len(changelog.get("open_qs_remaining", [])),
-        "memo_path"  : f"out/accounts/{acct_id}/v2/memo.json",
-        "spec_path"  : f"out/accounts/{acct_id}/v2/agent_spec.json",
-        "changelog"  : f"out/accounts/{acct_id}/changelog.json"
+        "memo_path"  : f"outputs/accounts/{acct_id}/v2/memo.json",
+        "spec_path"  : f"outputs/accounts/{acct_id}/v2/agent_spec.json",
+        "changelog"  : f"outputs/accounts/{acct_id}/changelog.json"
     }
 
 

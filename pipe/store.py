@@ -8,7 +8,7 @@ from pipe.utils import get_lgr, utc_now
 
 lgr = get_lgr("store")
 
-DB_PATH = Path("out/acct_registry.db")
+DB_PATH = Path("outputs/acct_registry.db")
 
 
 # ── connection ────────────────────────────────────────────

@@ -19,12 +19,9 @@ data/onboard/*.mp3
 data/onboard/*.wav
 data/onboard/*.m4a
 
-# logs
-logs/*.log
-
-# sqlite db
-*.db
-*.sqlite
+# outputs (generated — committed intentionally for submission)
+outputs/accounts/*/v1/raw_transcript.txt
+outputs/accounts/*/v2/raw_transcript.txt
 
 # OS
 .DS_Store

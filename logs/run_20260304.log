@@ -1,0 +1,319 @@
+2026-03-04 00:00:12 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 00:00:12 | run_batch  | INFO    | found 1 account pairs to process
+2026-03-04 00:00:12 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 00:00:12 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 00:00:12 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 00:00:12 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 00:00:12 | ingest     | INFO    | new acct_id assigned: ACCT-BC3A5DEA
+2026-03-04 00:00:12 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 00:00:12 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-BC3A5DEA\v1\raw_transcript.txt
+2026-03-04 00:00:12 | ingest     | INFO    | ingest complete | acct_id: ACCT-BC3A5DEA
+2026-03-04 00:00:12 | extract    | INFO    | starting extraction | acct_id: ACCT-BC3A5DEA | memo_ver: v1_demo
+2026-03-04 00:00:12 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 00:00:12 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 00:00:45 | extract    | DEBUG   | raw gemini response length: 3913 chars
+2026-03-04 00:00:45 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 00:00:45 | extract    | INFO    | fields filled: 13 | null fields: 6 | open_qs: 11
+2026-03-04 00:00:45 | extract    | INFO    | open questions flagged:
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What is the company name?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What is the main business phone number?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What is the business's physical address?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What is the business's operating timezone (IANA format, e.g., America/New_York)?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What is Ben's phone number for emergency call transfers?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What is the dedicated second business phone number for Clara to transfer calls to during business hours?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What are the specific phone numbers, email addresses, or physical addresses associated with GNM Pressure Washing (and their managed properties like Chevron and SOs gas stations) to reliably identify emergency callers?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ Are there any secondary contacts (name and phone number) for emergency transfers?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What are the desired timeout duration (in seconds) and retry count for call transfers?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ What message should be played if a transfer fails?
+2026-03-04 00:00:45 | extract    | INFO    |   ↳ Are there any calendar, CRM, or other systems Clara needs to integrate with?
+2026-03-04 00:00:45 | extract    | INFO    | memo saved → out\accounts\ACCT-BC3A5DEA\v1\memo.json
+2026-03-04 00:00:45 | prmpt_gen  | INFO    | gen agent spec | ACCT-BC3A5DEA | v1_demo
+2026-03-04 00:00:45 | run_batch  | ERROR   | failed: bens_electric | sequence item 0: expected str instance, dict found
+2026-03-04 00:00:45 | run_batch  | INFO    | batch report saved → out\batch_report.json
+2026-03-04 00:00:45 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 00:00:45 | run_batch  | INFO    | total: 1 | ok: 0 | failed: 1
+2026-03-04 00:03:29 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 00:03:29 | run_batch  | INFO    | found 1 account pairs to process
+2026-03-04 00:03:29 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 00:03:29 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 00:03:29 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 00:03:29 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 00:03:29 | ingest     | INFO    | new acct_id assigned: ACCT-73CA340E
+2026-03-04 00:03:29 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 00:03:29 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-73CA340E\v1\raw_transcript.txt
+2026-03-04 00:03:29 | ingest     | INFO    | ingest complete | acct_id: ACCT-73CA340E
+2026-03-04 00:03:29 | extract    | INFO    | starting extraction | acct_id: ACCT-73CA340E | memo_ver: v1_demo
+2026-03-04 00:03:29 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 00:03:29 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 00:04:00 | extract    | DEBUG   | raw gemini response length: 3273 chars
+2026-03-04 00:04:00 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 00:04:00 | extract    | INFO    | fields filled: 14 | null fields: 5 | open_qs: 4
+2026-03-04 00:04:00 | extract    | INFO    | open questions flagged:
+2026-03-04 00:04:00 | extract    | INFO    |   ↳ What is the primary business phone number from which calls will be forwarded to Clara?
+2026-03-04 00:04:00 | extract    | INFO    |   ↳ What is the IANA timezone for the business (e.g., America/Los_Angeles)?
+2026-03-04 00:04:00 | extract    | INFO    |   ↳ What is Ben's personal second phone number to which calls should be transferred for direct conversations (including emergencies)?
+2026-03-04 00:04:00 | extract    | INFO    |   ↳ What is the phone number to which post-call SMS notifications should be sent?
+2026-03-04 00:04:00 | extract    | INFO    | memo saved → out\accounts\ACCT-73CA340E\v1\memo.json
+2026-03-04 00:04:00 | prmpt_gen  | INFO    | gen agent spec | ACCT-73CA340E | v1_demo
+2026-03-04 00:04:19 | prmpt_gen  | INFO    | spec + prompt saved → out\accounts\ACCT-73CA340E\v1
+2026-03-04 00:04:19 | store      | INFO    | db ready → out\acct_registry.db
+2026-03-04 00:04:19 | store      | INFO    | acct inserted | ACCT-73CA340E
+2026-03-04 00:04:19 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-73CA340E ═══
+2026-03-04 00:04:19 | run_onboard | INFO    | ═══ PIPELINE B START | bens_electric_onboard.m4a | ACCT-73CA340E ═══
+2026-03-04 00:04:19 | store      | INFO    | db ready → out\acct_registry.db
+2026-03-04 00:04:19 | ingest     | INFO    | ingesting | file: bens_electric_onboard.m4a | call_type: onboard
+2026-03-04 00:04:19 | ingest     | INFO    | src_type detected: audio
+2026-03-04 00:04:19 | ingest     | INFO    | using existing acct_id: ACCT-73CA340E
+2026-03-04 00:04:19 | ingest     | INFO    | transcribing audio: bens_electric_onboard.m4a
+2026-03-04 00:04:23 | ingest     | INFO    | detected language: en | duration: 1548.0s
+2026-03-04 00:06:14 | ingest     | DEBUG   | transcript length: 18489 chars
+2026-03-04 00:06:14 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-73CA340E\v2\raw_transcript.txt
+2026-03-04 00:06:14 | ingest     | INFO    | ingest complete | acct_id: ACCT-73CA340E
+2026-03-04 00:06:14 | extract    | INFO    | starting extraction | acct_id: ACCT-73CA340E | memo_ver: v2_onboard
+2026-03-04 00:06:14 | extract    | DEBUG   | prompt built — 20650 chars
+2026-03-04 00:06:14 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 00:06:37 | extract    | DEBUG   | raw gemini response length: 3599 chars
+2026-03-04 00:06:37 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 00:06:37 | extract    | INFO    | fields filled: 14 | null fields: 5 | open_qs: 6
+2026-03-04 00:06:37 | extract    | INFO    | open questions flagged:
+2026-03-04 00:06:37 | extract    | INFO    |   ↳ What is the primary business phone number for Ben's Electric Solutions?
+2026-03-04 00:06:37 | extract    | INFO    |   ↳ What is Ben's operating timezone (IANA format, e.g., America/Los_Angeles)?
+2026-03-04 00:06:37 | extract    | INFO    |   ↳ What is Ben's dedicated phone number that will be used for call transfers from Clara, especially for emergency calls and requested transfers?
+2026-03-04 00:06:37 | extract    | INFO    |   ↳ Are there any specific secondary contacts and their phone numbers for emergency routing, in case Ben is unavailable?
+2026-03-04 00:06:37 | extract    | INFO    |   ↳ What are the specific call transfer rules (e.g., timeout duration before voicemail, number of retry attempts, or a custom failure message) Clara should use when attempting to transfer a call to a live person?
+2026-03-04 00:06:37 | extract    | INFO    |   ↳ Are there any specific CRM, scheduling, or other business systems that Ben's Electric Solutions uses that Clara Answers should integrate with?
+2026-03-04 00:06:37 | extract    | INFO    | memo saved → out\accounts\ACCT-73CA340E\v2\memo.json
+2026-03-04 00:06:37 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-73CA340E
+2026-03-04 00:06:37 | patch      | INFO    | v1 memo loaded → out\accounts\ACCT-73CA340E\v1\memo.json
+2026-03-04 00:06:37 | patch      | INFO    | patch complete | changes: 14
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] co_name
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] biz_hrs.mon.open
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] biz_hrs.tue.open
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] biz_hrs.wed.open
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] biz_hrs.thu.open
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] biz_hrs.fri.open
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] svcs
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] emrg_triggers
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] non_emrg_routing.type
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] non_emrg_routing.notes
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] aft_hrs_flow
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] biz_hrs_flow
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] open_qs
+2026-03-04 00:06:37 | patch      | INFO    |   [updated] notes
+2026-03-04 00:06:37 | patch      | INFO    | v2 memo saved    → out\accounts\ACCT-73CA340E\v2\memo.json
+2026-03-04 00:06:37 | patch      | INFO    | changelog saved  → out\accounts\ACCT-73CA340E\changelog.json
+2026-03-04 00:06:37 | prmpt_gen  | INFO    | gen agent spec | ACCT-73CA340E | v2_onboard
+2026-03-04 00:06:38 | run_batch  | ERROR   | failed: bens_electric | 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 21.757508922s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}
+2026-03-04 00:06:38 | run_batch  | INFO    | batch report saved → out\batch_report.json
+2026-03-04 00:06:38 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 00:06:38 | run_batch  | INFO    | total: 1 | ok: 0 | failed: 1
+2026-03-04 00:07:37 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 00:07:37 | run_batch  | INFO    | found 1 account pairs to process
+2026-03-04 00:07:37 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 00:07:37 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 00:07:37 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 00:07:37 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 00:07:37 | ingest     | INFO    | new acct_id assigned: ACCT-AD7665F5
+2026-03-04 00:07:37 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 00:07:37 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-AD7665F5\v1\raw_transcript.txt
+2026-03-04 00:07:37 | ingest     | INFO    | ingest complete | acct_id: ACCT-AD7665F5
+2026-03-04 00:07:37 | extract    | INFO    | starting extraction | acct_id: ACCT-AD7665F5 | memo_ver: v1_demo
+2026-03-04 00:07:37 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 00:07:37 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 00:07:37 | extract    | ERROR   | gemini call failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 22.401333503s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '22s'}]}}
+2026-03-04 00:07:37 | run_batch  | ERROR   | failed: bens_electric | 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 22.401333503s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '22s'}]}}
+2026-03-04 00:07:37 | run_batch  | INFO    | batch report saved → out\batch_report.json
+2026-03-04 00:07:37 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 00:07:37 | run_batch  | INFO    | total: 1 | ok: 0 | failed: 1
+2026-03-04 00:09:03 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 00:09:03 | run_batch  | INFO    | found 1 account pairs to process
+2026-03-04 00:09:03 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 00:09:03 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 00:09:03 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 00:09:03 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 00:09:03 | ingest     | INFO    | new acct_id assigned: ACCT-E45A8759
+2026-03-04 00:09:03 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 00:09:03 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-E45A8759\v1\raw_transcript.txt
+2026-03-04 00:09:03 | ingest     | INFO    | ingest complete | acct_id: ACCT-E45A8759
+2026-03-04 00:09:03 | extract    | INFO    | starting extraction | acct_id: ACCT-E45A8759 | memo_ver: v1_demo
+2026-03-04 00:09:03 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 00:09:03 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 00:09:03 | extract    | ERROR   | gemini call failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 56.060764848s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+2026-03-04 00:09:03 | run_batch  | ERROR   | failed: bens_electric | 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 56.060764848s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+2026-03-04 00:09:03 | run_batch  | INFO    | batch report saved → out\batch_report.json
+2026-03-04 00:09:03 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 00:09:03 | run_batch  | INFO    | total: 1 | ok: 0 | failed: 1
+2026-03-04 11:32:04 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 11:32:04 | run_batch  | INFO    | found 1 account pairs to process
+2026-03-04 11:32:04 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 11:32:04 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 11:32:04 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 11:32:04 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 11:32:04 | ingest     | INFO    | new acct_id assigned: ACCT-F39B210A
+2026-03-04 11:32:04 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 11:32:04 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-F39B210A\v1\raw_transcript.txt
+2026-03-04 11:32:04 | ingest     | INFO    | ingest complete | acct_id: ACCT-F39B210A
+2026-03-04 11:32:04 | extract    | INFO    | starting extraction | acct_id: ACCT-F39B210A | memo_ver: v1_demo
+2026-03-04 11:32:04 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 11:32:04 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 11:32:34 | extract    | DEBUG   | raw gemini response length: 4007 chars
+2026-03-04 11:32:34 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 11:32:34 | extract    | INFO    | fields filled: 13 | null fields: 6 | open_qs: 12
+2026-03-04 11:32:34 | extract    | INFO    | open questions flagged:
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the official company name?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the main business phone number (that Clara will initially answer/receive forwarded calls from)?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the full business address?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the business's timezone (IANA format, e.g., America/Los_Angeles)?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the phone number for Clara to transfer emergency calls to Ben?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ Is there a secondary contact name for emergency call routing?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ Is there a secondary phone number for emergency call routing?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the priority order for emergency call routing?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the phone number for Clara to transfer non-emergency calls to Ben?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What is the timeout duration in seconds for a call transfer attempt?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ How many times should the agent retry a call transfer before failing?
+2026-03-04 11:32:34 | extract    | INFO    |   ↳ What message should the agent play if a call transfer fails?
+2026-03-04 11:32:34 | extract    | INFO    | memo saved → out\accounts\ACCT-F39B210A\v1\memo.json
+2026-03-04 11:32:34 | prmpt_gen  | INFO    | gen agent spec | ACCT-F39B210A | v1_demo
+2026-03-04 11:32:56 | prmpt_gen  | INFO    | spec + prompt saved → out\accounts\ACCT-F39B210A\v1
+2026-03-04 11:32:56 | store      | INFO    | db ready → out\acct_registry.db
+2026-03-04 11:32:56 | store      | INFO    | acct inserted | ACCT-F39B210A
+2026-03-04 11:32:56 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-F39B210A ═══
+2026-03-04 11:32:56 | run_onboard | INFO    | ═══ PIPELINE B START | bens_electric_onboard.m4a | ACCT-F39B210A ═══
+2026-03-04 11:32:56 | store      | INFO    | db ready → out\acct_registry.db
+2026-03-04 11:32:56 | ingest     | INFO    | ingesting | file: bens_electric_onboard.m4a | call_type: onboard
+2026-03-04 11:32:56 | ingest     | INFO    | src_type detected: audio
+2026-03-04 11:32:56 | ingest     | INFO    | using existing acct_id: ACCT-F39B210A
+2026-03-04 11:32:56 | ingest     | INFO    | transcribing audio: bens_electric_onboard.m4a
+2026-03-04 11:33:06 | ingest     | INFO    | detected language: en | duration: 1548.0s
+2026-03-04 11:35:22 | ingest     | DEBUG   | transcript length: 18489 chars
+2026-03-04 11:35:22 | ingest     | INFO    | raw transcript saved → out\accounts\ACCT-F39B210A\v2\raw_transcript.txt
+2026-03-04 11:35:22 | ingest     | INFO    | ingest complete | acct_id: ACCT-F39B210A
+2026-03-04 11:35:22 | extract    | INFO    | starting extraction | acct_id: ACCT-F39B210A | memo_ver: v2_onboard
+2026-03-04 11:35:22 | extract    | DEBUG   | prompt built — 20650 chars
+2026-03-04 11:35:22 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 11:35:53 | extract    | DEBUG   | raw gemini response length: 3581 chars
+2026-03-04 11:35:53 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 11:35:53 | extract    | INFO    | fields filled: 14 | null fields: 5 | open_qs: 11
+2026-03-04 11:35:53 | extract    | INFO    | open questions flagged:
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What is the main business phone number?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What is the IANA timezone for the business?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What is Ben's second phone number for call transfers?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What are the business hours for Saturday?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What are the business hours for Sunday?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What specific phone numbers or addresses are associated with GNM Pressure Washing, Chevron, and SOs gas stations to identify emergency calls?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ Are there any secondary emergency contacts or routing rules?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What is the timeout duration in seconds for call transfers?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ How many times should a call transfer be retried before failing?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ What message should be played if a call transfer fails?
+2026-03-04 11:35:53 | extract    | INFO    |   ↳ Are there any other systems Clara needs to integrate with?
+2026-03-04 11:35:53 | extract    | INFO    | memo saved → out\accounts\ACCT-F39B210A\v2\memo.json
+2026-03-04 11:35:53 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-F39B210A
+2026-03-04 11:35:53 | patch      | INFO    | v1 memo loaded → out\accounts\ACCT-F39B210A\v1\memo.json
+2026-03-04 11:35:53 | patch      | INFO    | patch complete | changes: 9
+2026-03-04 11:35:53 | patch      | INFO    |   [filled] co_name
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] svcs
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] emrg_triggers
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] non_emrg_routing.type
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] non_emrg_routing.notes
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] aft_hrs_flow
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] biz_hrs_flow
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] open_qs
+2026-03-04 11:35:53 | patch      | INFO    |   [updated] notes
+2026-03-04 11:35:53 | patch      | INFO    | v2 memo saved    → out\accounts\ACCT-F39B210A\v2\memo.json
+2026-03-04 11:35:53 | patch      | INFO    | changelog saved  → out\accounts\ACCT-F39B210A\changelog.json
+2026-03-04 11:35:53 | prmpt_gen  | INFO    | gen agent spec | ACCT-F39B210A | v2_onboard
+2026-03-04 11:36:08 | prmpt_gen  | INFO    | spec + prompt saved → out\accounts\ACCT-F39B210A\v2
+2026-03-04 11:36:08 | store      | INFO    | db ready → out\acct_registry.db
+2026-03-04 11:36:08 | store      | INFO    | acct updated | ACCT-F39B210A
+2026-03-04 11:36:08 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-F39B210A ═══
+2026-03-04 11:36:08 | run_batch  | INFO    | batch report saved → out\batch_report.json
+2026-03-04 11:36:08 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 11:36:08 | run_batch  | INFO    | total: 1 | ok: 1 | failed: 0
+2026-03-04 12:31:11 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 12:31:11 | run_batch  | INFO    | found 1 account pairs to process
+2026-03-04 12:31:11 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 12:31:11 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 12:31:11 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 12:31:11 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 12:31:11 | ingest     | INFO    | new acct_id assigned: ACCT-D4F10BF2
+2026-03-04 12:31:11 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 12:31:11 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-D4F10BF2\v1\raw_transcript.txt
+2026-03-04 12:31:11 | ingest     | INFO    | ingest complete | acct_id: ACCT-D4F10BF2
+2026-03-04 12:31:11 | extract    | INFO    | starting extraction | acct_id: ACCT-D4F10BF2 | memo_ver: v1_demo
+2026-03-04 12:31:11 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 12:31:11 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 12:31:44 | extract    | DEBUG   | raw gemini response length: 3833 chars
+2026-03-04 12:31:44 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 12:31:44 | extract    | INFO    | fields filled: 13 | null fields: 6 | open_qs: 14
+2026-03-04 12:31:44 | extract    | INFO    | open questions flagged:
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is the official company name for Ben's business?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is Ben's main business phone number (the number from which calls will be forwarded to Clara and where SMS notifications will be sent)?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is the new second phone number that Clara should use for call transfers (both during business hours and for emergencies)?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is the company's physical address?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ In which IANA timezone is the business located?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ Are Saturdays active business days? If so, what are their open and close times?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ Are Sundays active business days? If so, what are their open and close times?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ Is there a secondary contact name for emergency routing?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is the secondary phone number for emergency routing?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is the desired order for emergency routing if multiple contacts are available?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What is the timeout in seconds before a transfer attempt is considered failed?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ How many times should Clara attempt to transfer a call if the first attempt fails?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What message should Clara play if a transfer fails after all retries?
+2026-03-04 12:31:44 | extract    | INFO    |   ↳ What other systems or tools (e.g., CRM, scheduling software) should Clara integrate with?
+2026-03-04 12:31:44 | extract    | INFO    | memo saved → outputs\accounts\ACCT-D4F10BF2\v1\memo.json
+2026-03-04 12:31:44 | prmpt_gen  | INFO    | gen agent spec | ACCT-D4F10BF2 | v1_demo
+2026-03-04 12:31:59 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-D4F10BF2\v1
+2026-03-04 12:31:59 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 12:31:59 | store      | INFO    | acct inserted | ACCT-D4F10BF2
+2026-03-04 12:31:59 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-D4F10BF2 ═══
+2026-03-04 12:31:59 | run_onboard | INFO    | ═══ PIPELINE B START | bens_electric_onboard.m4a | ACCT-D4F10BF2 ═══
+2026-03-04 12:31:59 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 12:31:59 | ingest     | INFO    | ingesting | file: bens_electric_onboard.m4a | call_type: onboard
+2026-03-04 12:31:59 | ingest     | INFO    | src_type detected: audio
+2026-03-04 12:31:59 | ingest     | INFO    | using existing acct_id: ACCT-D4F10BF2
+2026-03-04 12:31:59 | ingest     | INFO    | transcribing audio: bens_electric_onboard.m4a
+2026-03-04 12:32:04 | ingest     | INFO    | detected language: en | duration: 1548.0s
+2026-03-04 12:34:01 | ingest     | DEBUG   | transcript length: 18489 chars
+2026-03-04 12:34:01 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-D4F10BF2\v2\raw_transcript.txt
+2026-03-04 12:34:01 | ingest     | INFO    | ingest complete | acct_id: ACCT-D4F10BF2
+2026-03-04 12:34:01 | extract    | INFO    | starting extraction | acct_id: ACCT-D4F10BF2 | memo_ver: v2_onboard
+2026-03-04 12:34:01 | extract    | DEBUG   | prompt built — 20650 chars
+2026-03-04 12:34:01 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 12:34:31 | extract    | DEBUG   | raw gemini response length: 2949 chars
+2026-03-04 12:34:31 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 12:34:31 | extract    | INFO    | fields filled: 13 | null fields: 6 | open_qs: 8
+2026-03-04 12:34:31 | extract    | INFO    | open questions flagged:
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is the primary business phone number for Ben's Electric Solutions Team?
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is the IANA timezone for Ben's business operations? (e.g., America/Los_Angeles)
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is Ben's new personal phone number for call transfers once it is active?
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is the specific phone number for emergency call routing to Ben (the number calls from GNM Pressure Washing should be patched to)?
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is the mailing address for GNM Pressure Washing?
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is the phone number for Shelley (primary contact at GNM Pressure Washing)?
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ What is the email address for Shelley (primary contact at GNM Pressure Washing)?
+2026-03-04 12:34:31 | extract    | INFO    |   ↳ Can you provide a list of specific service categories (e.g., electrical repair, installation, maintenance) that Clara should be trained on, beyond the general pricing structure?
+2026-03-04 12:34:31 | extract    | INFO    | memo saved → outputs\accounts\ACCT-D4F10BF2\v2\memo.json
+2026-03-04 12:34:31 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-D4F10BF2
+2026-03-04 12:34:31 | patch      | INFO    | v1 memo loaded → outputs\accounts\ACCT-D4F10BF2\v1\memo.json
+2026-03-04 12:34:31 | patch      | INFO    | patch complete | changes: 12
+2026-03-04 12:34:31 | patch      | INFO    |   [filled] co_name
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] biz_hrs.mon.close
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] biz_hrs.tue.close
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] biz_hrs.wed.close
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] biz_hrs.thu.close
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] biz_hrs.fri.close
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] emrg_triggers
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] non_emrg_routing.notes
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] aft_hrs_flow
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] biz_hrs_flow
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] open_qs
+2026-03-04 12:34:31 | patch      | INFO    |   [updated] notes
+2026-03-04 12:34:31 | patch      | INFO    | v2 memo saved    → outputs\accounts\ACCT-D4F10BF2\v2\memo.json
+2026-03-04 12:34:31 | patch      | INFO    | changelog saved  → outputs\accounts\ACCT-D4F10BF2\changelog.json
+2026-03-04 12:34:31 | prmpt_gen  | INFO    | gen agent spec | ACCT-D4F10BF2 | v2_onboard
+2026-03-04 12:34:53 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-D4F10BF2\v2
+2026-03-04 12:34:53 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 12:34:53 | store      | INFO    | acct updated | ACCT-D4F10BF2
+2026-03-04 12:34:53 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-D4F10BF2 ═══
+2026-03-04 12:34:53 | run_batch  | INFO    | batch report saved → outputs\batch_report.json
+2026-03-04 12:34:53 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 12:34:53 | run_batch  | INFO    | total: 1 | ok: 1 | failed: 0

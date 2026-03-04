@@ -33,8 +33,8 @@ def run_demo_pipeline(fpath: str) -> dict:
         "acct_id"  : memo["acct_id"],
         "co_name"  : memo.get("co_name"),
         "open_qs"  : len(memo.get("open_qs", [])),
-        "memo_path": f"out/accounts/{memo['acct_id']}/v1/memo.json",
-        "spec_path": f"out/accounts/{memo['acct_id']}/v1/agent_spec.json"
+        "memo_path": f"outputs/accounts/{memo['acct_id']}/v1/memo.json",
+        "spec_path": f"outputs/accounts/{memo['acct_id']}/v1/agent_spec.json"
     }
 
 

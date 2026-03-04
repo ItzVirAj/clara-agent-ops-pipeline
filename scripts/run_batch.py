@@ -117,7 +117,7 @@ def run_batch() -> dict:
     }
 
     # save batch report
-    report_path = Path("out/batch_report.json")
+    report_path = Path("outputs/batch_report.json")
     write_json(summary, report_path)
     lgr.info(f"batch report saved → {report_path}")
 
