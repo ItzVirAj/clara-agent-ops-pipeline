@@ -100,7 +100,7 @@ function renderAccounts(accts) {
 
 // ── build single account card
 function buildCard(a) {
-  const isDone = a.status === "v2_done"
+  const isDone = a.status === "v2_done" || a.status === "v1_done"
   const isV1   = a.status === "v1_done"
 
   const badge = isDone
