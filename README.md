@@ -423,5 +423,6 @@ Issues:
 [https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues](https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues)
 
 Loom Demo:
-*(to be added)*
+https://drive.google.com/file/d/1DZTO_y76KKHjuImteUhmUyPdnq3L35XT/view?usp=sharing
+
 
