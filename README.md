@@ -164,6 +164,27 @@ Start the Flask dashboard:
 ```bash
 python pipe/server.py
 
+Open browser at http://localhost:5000
+
+Dashboard features:
+
+    View all processed accounts and their status
+    Run Pipeline A (demo) on any file
+    Run Pipeline B (onboard) on any file with acct_id
+    Run full batch on all accounts
+    Live log output while pipeline runs
+    View changelog diff per account inline
+
+# Docker
+      Run batch pipeline via Docker:
+            docker-compose up clara-pipeline
+
+# Run dashboard via Docker:
+      docker-compose up clara-dashboard
+
+Open browser at http://localhost:5000
+
+    Make sure cfg/.env is filled before running Docker.
 
 ### Get Gemini API Key
 
@@ -379,9 +400,9 @@ No paid speech-to-text services are required.
 3. **Transcription accuracy**
    The Whisper base model prioritizes CPU speed over maximum accuracy.
 
-4. **Limited dataset**
-   The assignment dataset contains a single account.
-
+4. **Dashboard runs locally only**
+   Flask server runs on localhost:5000. Not deployed to cloud.
+   For production, deploy behind gunicorn + nginx.
 ---
 
 # Future Improvements
