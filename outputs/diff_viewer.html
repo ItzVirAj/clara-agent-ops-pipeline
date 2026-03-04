@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clara — Changelog Diff Viewer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+
+    .hdr {
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+
+    .hdr h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+
+    .hdr p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .load-area {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      background: #1e2330;
+      border: 1px dashed #334155;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .load-area label {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .load-area label:hover { background: #2563eb; }
+    .load-area input { display: none; }
+
+    .load-area .hint {
+      margin-top: 10px;
+      color: #64748b;
+      font-size: 0.82rem;
+    }
+
+    .card {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      background: #1e2330;
+      border: 1px solid #2d3748;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card-hdr {
+      padding: 14px 20px;
+      background: #161b27;
+      border-bottom: 1px solid #2d3748;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-hdr h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .badge-blue  { background: #1e3a5f; color: #60a5fa; }
+    .badge-green { background: #14342b; color: #34d399; }
+    .badge-gray  { background: #1e293b; color: #94a3b8; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: #2d3748;
+    }
+
+    .meta-cell {
+      background: #1e2330;
+      padding: 14px 20px;
+    }
+
+    .meta-cell .lbl {
+      font-size: 0.72rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .meta-cell .val {
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .changes-list { padding: 0; }
+
+    .chg-row {
+      display: grid;
+      grid-template-columns: 160px 80px 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid #1a2235;
+      font-size: 0.84rem;
+    }
+
+    .chg-row:last-child { border-bottom: none; }
+
+    .chg-row:hover { background: #1a2235; }
+
+    .chg-cell {
+      padding: 11px 16px;
+      border-right: 1px solid #1a2235;
+      word-break: break-word;
+    }
+
+    .chg-cell:last-child { border-right: none; }
+
+    .chg-field {
+      font-family: "Courier New", monospace;
+      color: #93c5fd;
+      font-size: 0.8rem;
+    }
+
+    .chg-action-filled  { color: #34d399; font-weight: 600; }
+    .chg-action-updated { color: #fbbf24; font-weight: 600; }
+
+    .val-null { color: #475569; font-style: italic; }
+    .val-v1   { color: #f87171; }
+    .val-v2   { color: #34d399; }
+
+    .col-hdrs {
+      display: grid;
+      grid-template-columns: 160px 80px 1fr 1fr;
+      background: #161b27;
+      border-bottom: 1px solid #2d3748;
+      font-size: 0.72rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .col-hdr { padding: 8px 16px; border-right: 1px solid #1a2235; }
+    .col-hdr:last-child { border-right: none; }
+
+    .open-qs { padding: 16px 20px; }
+
+    .open-qs h3 {
+      font-size: 0.8rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .q-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #1a2235;
+      font-size: 0.86rem;
+      color: #cbd5e1;
+    }
+
+    .q-item:last-child { border-bottom: none; }
+
+    .q-num {
+      min-width: 22px;
+      height: 22px;
+      background: #1e3a5f;
+      color: #60a5fa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .empty {
+      max-width: 900px;
+      margin: 60px auto;
+      text-align: center;
+      color: #475569;
+    }
+
+    .empty svg {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      opacity: 0.3;
+    }
+
+    .empty p { font-size: 0.9rem; }
+
+    #content { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="hdr">
+    <h1>Clara — Changelog Diff Viewer</h1>
+    <p>Load a <code>changelog.json</code> file to inspect v1 → v2 field changes</p>
+  </div>
+
+  <div class="load-area">
+    <label>
+      Load changelog.json
+      <input type="file" id="file-inp" accept=".json" />
+    </label>
+    <p class="hint">
+      File location: <code>outputs/accounts/&lt;acct_id&gt;/changelog.json</code>
+    </p>
+  </div>
+
+  <div class="empty" id="empty-state">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586
+           a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    <p>No changelog loaded — select a file above</p>
+  </div>
+
+  <div id="content">
+
+    <!-- summary card -->
+    <div class="card" id="summary-card"></div>
+
+    <!-- changes card -->
+    <div class="card" id="changes-card"></div>
+
+    <!-- open questions card -->
+    <div class="card" id="qs-card"></div>
+
+  </div>
+
+  <script>
+    const fileInp     = document.getElementById("file-inp")
+    const emptyState  = document.getElementById("empty-state")
+    const content     = document.getElementById("content")
+    const summaryCard = document.getElementById("summary-card")
+    const changesCard = document.getElementById("changes-card")
+    const qsCard      = document.getElementById("qs-card")
+
+    fileInp.addEventListener("change", e => {
+      const file = e.target.files[0]
+      if (!file) return
+
+      const reader = new FileReader()
+      reader.onload = ev => {
+        try {
+          const cl = JSON.parse(ev.target.result)
+          render(cl)
+        } catch {
+          alert("Invalid JSON file — make sure you loaded a changelog.json")
+        }
+      }
+      reader.readAsText(file)
+    })
+
+    function fmt(val) {
+      if (val === null || val === undefined) return `<span class="val-null">null</span>`
+      if (Array.isArray(val)) {
+        if (val.length === 0) return `<span class="val-null">[]</span>`
+        return val.map(v => `<div>• ${escHtml(String(v))}</div>`).join("")
+      }
+      return escHtml(String(val))
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    }
+
+    function fmtTs(ts) {
+      if (!ts) return "—"
+      try {
+        return new Date(ts).toLocaleString()
+      } catch { return ts }
+    }
+
+    function render(cl) {
+      emptyState.style.display  = "none"
+      content.style.display     = "block"
+
+      const changes = cl.changes || []
+      const openQs  = cl.open_qs_remaining || []
+
+      // ── summary card
+      summaryCard.innerHTML = `
+        <div class="card-hdr">
+          <h2>Summary</h2>
+          <span class="badge badge-blue">${cl.acct_id || "unknown"}</span>
+          <span class="badge badge-green">${changes.length} changes</span>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-cell">
+            <div class="lbl">Account ID</div>
+            <div class="val">${cl.acct_id || "—"}</div>
+          </div>
+          <div class="meta-cell">
+            <div class="lbl">Patched At</div>
+            <div class="val">${fmtTs(cl.patch_at)}</div>
+          </div>
+          <div class="meta-cell">
+            <div class="lbl">Total Changes</div>
+            <div class="val">${cl.total_changes ?? changes.length}</div>
+          </div>
+          <div class="meta-cell">
+            <div class="lbl">Open Qs Remaining</div>
+            <div class="val">${openQs.length}</div>
+          </div>
+          <div class="meta-cell">
+            <div class="lbl">v1 Memo</div>
+            <div class="val" style="font-size:0.78rem;color:#64748b">
+              ${cl.v1_memo || "—"}
+            </div>
+          </div>
+        </div>
+      `
+
+      // ── changes card
+      const filled  = changes.filter(c => c.action === "filled").length
+      const updated = changes.filter(c => c.action === "updated").length
+
+      let rows = changes.map(c => `
+        <div class="chg-row">
+          <div class="chg-cell chg-field">${escHtml(c.field)}</div>
+          <div class="chg-cell">
+            <span class="chg-action-${c.action}">${c.action}</span>
+          </div>
+          <div class="chg-cell val-v1">${fmt(c.v1)}</div>
+          <div class="chg-cell val-v2">${fmt(c.v2)}</div>
+        </div>
+      `).join("")
+
+      changesCard.innerHTML = `
+        <div class="card-hdr">
+          <h2>Field Changes</h2>
+          <span class="badge badge-green">${filled} filled</span>
+          <span class="badge badge-gray">${updated} updated</span>
+        </div>
+        <div class="col-hdrs">
+          <div class="col-hdr">Field</div>
+          <div class="col-hdr">Action</div>
+          <div class="col-hdr">v1 Value</div>
+          <div class="col-hdr">v2 Value</div>
+        </div>
+        <div class="changes-list">${rows || "<div style='padding:20px;color:#475569'>No changes recorded</div>"}</div>
+      `
+
+      // ── open questions card
+      if (openQs.length === 0) {
+        qsCard.innerHTML = `
+          <div class="card-hdr">
+            <h2>Open Questions Remaining</h2>
+            <span class="badge badge-green">All resolved</span>
+          </div>
+          <div class="open-qs">
+            <p style="color:#34d399;font-size:0.9rem">
+              No open questions remaining — agent configuration is complete.
+            </p>
+          </div>
+        `
+      } else {
+        const qItems = openQs.map((q, i) => `
+          <div class="q-item">
+            <div class="q-num">${i + 1}</div>
+            <div>${escHtml(q)}</div>
+          </div>
+        `).join("")
+
+        qsCard.innerHTML = `
+          <div class="card-hdr">
+            <h2>Open Questions Remaining</h2>
+            <span class="badge badge-gray">${openQs.length} unresolved</span>
+          </div>
+          <div class="open-qs">
+            <h3>Still needed to complete agent config</h3>
+            ${qItems}
+          </div>
+        `
+      }
+    }
+  </script>
+
+</body>
+</html>
