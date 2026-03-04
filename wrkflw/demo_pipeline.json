@@ -1,0 +1,112 @@
+{
+  "name": "Clara — Demo Pipeline (Pipeline A)",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "run-demo",
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "id": "node_trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "position": [200, 300],
+      "typeVersion": 1,
+      "notes": "Receives file_path and optional acct_id as POST body"
+    },
+    {
+      "parameters": {
+        "command": "cd /app && python scripts/run_demo.py {{ $json.file_path }}"
+      },
+      "id": "node_ingest_extract",
+      "name": "Ingest + Extract (Pipeline A)",
+      "type": "n8n-nodes-base.executeCommand",
+      "position": [450, 300],
+      "typeVersion": 1,
+      "notes": "Runs ingest → extract → prmpt_gen → store v1"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/{{ $env.GH_REPO }}/issues",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $env.GH_TOKEN }}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "[Clara] {{ $json.co_name }} — {{ $json.acct_id }}"
+            },
+            {
+              "name": "body",
+              "value": "Account: {{ $json.co_name }}\nStatus: v1_done\nOpen Qs: {{ $json.open_qs }}"
+            }
+          ]
+        }
+      },
+      "id": "node_gh_issue",
+      "name": "Create GitHub Issue",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [700, 300],
+      "typeVersion": 3,
+      "notes": "Creates tracking issue in GitHub — handled by pipe/task_push.py in Python runner"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "status",
+              "value": "v1_done"
+            },
+            {
+              "name": "acct_id",
+              "value": "={{ $json.acct_id }}"
+            },
+            {
+              "name": "memo_path",
+              "value": "={{ $json.memo_path }}"
+            }
+          ]
+        }
+      },
+      "id": "node_response",
+      "name": "Pipeline A Response",
+      "type": "n8n-nodes-base.set",
+      "position": [950, 300],
+      "typeVersion": 1,
+      "notes": "Returns acct_id, status, memo_path to caller"
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{"node": "Ingest + Extract (Pipeline A)", "type": "main", "index": 0}]]
+    },
+    "Ingest + Extract (Pipeline A)": {
+      "main": [[{"node": "Create GitHub Issue", "type": "main", "index": 0}]]
+    },
+    "Create GitHub Issue": {
+      "main": [[{"node": "Pipeline A Response", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Pipeline A — processes demo call transcript or audio into v1 account memo + agent spec",
+    "version": "1.0"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "name": "Clara — Onboard Pipeline (Pipeline B)",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "run-onboard",
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "id": "node_trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "position": [200, 300],
+      "typeVersion": 1,
+      "notes": "Receives file_path and acct_id as POST body"
+    },
+    {
+      "parameters": {
+        "command": "cd /app && python scripts/run_onboard.py {{ $json.file_path }} {{ $json.acct_id }}"
+      },
+      "id": "node_ingest",
+      "name": "Ingest Audio (Whisper)",
+      "type": "n8n-nodes-base.executeCommand",
+      "position": [450, 200],
+      "typeVersion": 1,
+      "notes": "faster-whisper transcribes audio if needed, loads transcript if text"
+    },
+    {
+      "parameters": {
+        "command": "echo extraction handled inside run_onboard.py"
+      },
+      "id": "node_extract",
+      "name": "Extract v2 Memo (Gemini)",
+      "type": "n8n-nodes-base.executeCommand",
+      "position": [450, 350],
+      "typeVersion": 1,
+      "notes": "Gemini 2.5 Flash extracts structured fields from onboard transcript"
+    },
+    {
+      "parameters": {
+        "command": "echo patch handled inside run_onboard.py"
+      },
+      "id": "node_patch",
+      "name": "Patch v1 → v2 + Changelog",
+      "type": "n8n-nodes-base.executeCommand",
+      "position": [700, 300],
+      "typeVersion": 1,
+      "notes": "pipe/patch.py merges v1 memo with v2 data, generates changelog.json"
+    },
+    {
+      "parameters": {
+        "command": "echo prmpt_gen handled inside run_onboard.py"
+      },
+      "id": "node_prmpt",
+      "name": "Generate v2 Agent Spec + Prompt",
+      "type": "n8n-nodes-base.executeCommand",
+      "position": [950, 300],
+      "typeVersion": 1,
+      "notes": "pipe/prmpt_gen.py generates agent_spec.json + agent_prompt.txt"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/{{ $env.GH_REPO }}/issues/{{ $json.issue_num }}",
+        "method": "PATCH",
+        "authentication": "genericCredentialType",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $env.GH_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "state",
+              "value": "closed"
+            },
+            {
+              "name": "body",
+              "value": "Status: v2_done\nChanges: {{ $json.changes }}\nOpen Qs remaining: {{ $json.open_qs }}"
+            }
+          ]
+        }
+      },
+      "id": "node_gh_update",
+      "name": "Update + Close GitHub Issue",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [1200, 300],
+      "typeVersion": 3,
+      "notes": "Updates and closes the tracking issue — handled by pipe/task_push.py"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "status",
+              "value": "v2_done"
+            },
+            {
+              "name": "acct_id",
+              "value": "={{ $json.acct_id }}"
+            },
+            {
+              "name": "changes",
+              "value": "={{ $json.changes }}"
+            }
+          ]
+        }
+      },
+      "id": "node_response",
+      "name": "Pipeline B Response",
+      "type": "n8n-nodes-base.set",
+      "position": [1450, 300],
+      "typeVersion": 1,
+      "notes": "Returns acct_id, status, change count to caller"
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{"node": "Ingest Audio (Whisper)", "type": "main", "index": 0}]]
+    },
+    "Ingest Audio (Whisper)": {
+      "main": [[{"node": "Patch v1 → v2 + Changelog", "type": "main", "index": 0}]]
+    },
+    "Extract v2 Memo (Gemini)": {
+      "main": [[{"node": "Patch v1 → v2 + Changelog", "type": "main", "index": 0}]]
+    },
+    "Patch v1 → v2 + Changelog": {
+      "main": [[{"node": "Generate v2 Agent Spec + Prompt", "type": "main", "index": 0}]]
+    },
+    "Generate v2 Agent Spec + Prompt": {
+      "main": [[{"node": "Update + Close GitHub Issue", "type": "main", "index": 0}]]
+    },
+    "Update + Close GitHub Issue": {
+      "main": [[{"node": "Pipeline B Response", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Pipeline B — processes onboarding call, patches v1→v2, generates changelog",
+    "version": "1.0"
+  }
+}
