@@ -12,12 +12,12 @@ __pycache__/
 *.pyd
 
 # data files (raw audio - can be large)
-data/demo/*.mp3
-data/demo/*.wav
-data/demo/*.m4a
+data/onboard/*.m4a
 data/onboard/*.mp3
 data/onboard/*.wav
-data/onboard/*.m4a
+data/demo/*.m4a
+data/demo/*.mp3
+data/demo/*.wav
 
 # outputs (generated — committed intentionally for submission)
 outputs/accounts/*/v1/raw_transcript.txt
