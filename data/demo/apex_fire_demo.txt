@@ -1,0 +1,22 @@
+Rep: Hey, good afternoon. Thanks for joining. So this is the demo call for Apex Fire Protection — is that right?
+Caller: Yes, that's us. I'm Dave Kowalski, operations manager here.
+Rep: Perfect Dave. So let's just walk through how Clara will work for you. First — your business hours, what are they currently?
+Caller: We're open Monday through Friday, 7am to 5pm. We're in Chicago so that's Central time.
+Rep: Got it. And on weekends?
+Caller: No, we're closed weekends. But emergencies obviously don't follow business hours.
+Rep: Right, exactly. So speaking of emergencies — what qualifies as an emergency for Apex?
+Caller: So anything that's an active fire alarm system going off, a sprinkler head that's burst and flooding, or any suppression system that's discharged unexpectedly. Those are the big three.
+Rep: And when those calls come in after hours, who do we route them to?
+Caller: Primary is our on-call tech, Mike Russo. His cell is 312-449-0187. If Mike doesn't pick up within about 30 seconds, try our service coordinator, Janet Lee at 312-449-0291.
+Rep: Perfect. And for non-emergency calls during business hours?
+Caller: Those just come to our main office line. The receptionist handles scheduling and quotes.
+Rep: What services does Apex offer?
+Caller: Fire alarm inspection and testing, sprinkler system installation and repair, suppression system maintenance, and emergency service calls.
+Rep: Do you use any software we should know about? Like for job management?
+Caller: Yeah we're on ServiceTrade. All our jobs go through there.
+Rep: And the office address?
+Caller: 4801 West Peterson Avenue, Chicago, Illinois 60646.
+Rep: Great. And if Clara can't reach Mike or Janet — what should she tell the caller?
+Caller: Something like — we're aware this is urgent and a technician will be in contact within 15 minutes.
+Rep: Perfect. I think that covers most of it. We'll put together the agent config and get it over to you.
+Caller: Sounds good. Thanks.

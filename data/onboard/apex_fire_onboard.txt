@@ -1,0 +1,18 @@
+Rep: Hey Dave, welcome to the onboarding call. We have most of the config ready, just a few gaps to fill.
+Caller: Sure, go ahead.
+Rep: Main business phone number?
+Caller: Main line is 312-449-0100.
+Rep: Transfer timeout we have as 30 seconds — retries?
+Caller: Try twice before giving up.
+Rep: Got it. Do you want Clara to mention ServiceTrade to callers at all?
+Caller: No, keep that internal.
+Rep: Any specific after hours flow notes?
+Caller: Yes — if it's not a fire or sprinkler emergency, just take a message and say we'll call back first thing in the morning. Don't promise specific times.
+Rep: Business hours flow — anything specific for how calls should open?
+Caller: Clara should ask for their name, what property they're calling about, and whether it's a new issue or follow-up on an existing job.
+Rep: Saturday and Sunday — still closed?
+Caller: Correct, fully closed.
+Rep: Email for notifications?
+Caller: dispatch@apexfireprotection.com
+Rep: Perfect Dave that's everything.
+Caller: Great, looking forward to going live.

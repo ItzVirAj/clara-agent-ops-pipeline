@@ -1,0 +1,22 @@
+Rep: Alright, so this is the demo call for Swift HVAC Services — correct?
+Caller: That's right. I'm Sandra Ortiz, I'm the owner.
+Rep: Great Sandra. Let's go through the basics. Business hours first?
+Caller: We're open Monday to Friday, 8am to 6pm. Saturday we do 9 to 2. We're in Dallas, Texas — so Central time.
+Rep: And Sundays?
+Caller: Closed Sundays.
+Rep: What counts as an emergency for Swift HVAC?
+Caller: So in Texas the summers are brutal. If someone's AC goes completely out and they've got elderly people or young kids in the house, that's an emergency. Also any gas leak related to heating systems, carbon monoxide situations, and commercial refrigeration failures for restaurants — those are emergencies too.
+Rep: Who handles emergency routing?
+Caller: That's me on primary — Sandra — my cell is 214-773-0482. Backup is my lead tech Carlos Mendez at 214-773-0619.
+Rep: Non-emergency calls during business hours?
+Caller: Route to our office line. We handle quotes and scheduling in-house.
+Rep: Services you offer?
+Caller: AC installation and repair, heating system service, duct cleaning, commercial refrigeration, and preventive maintenance contracts.
+Rep: Any software integrations?
+Caller: We use Jobber for scheduling and invoicing.
+Rep: Office address?
+Caller: 9200 Carpenter Freeway, Dallas Texas 75247.
+Rep: And if we can't reach you or Carlos after hours?
+Caller: Tell them we have a technician on call and they will receive a call back within 20 minutes. And collect their name, number and address.
+Rep: Perfect that's everything we need for now.
+Caller: Great, looking forward to it.

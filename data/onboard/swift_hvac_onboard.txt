@@ -1,0 +1,18 @@
+Rep: Hi Sandra, onboarding call. Just a few things to finalize.
+Caller: Sure go ahead.
+Rep: Main business number?
+Caller: 214-773-0400 is the main office line.
+Rep: Transfer rules — timeout 20 seconds before Carlos?
+Caller: Yeah 20 seconds is right. And if Carlos doesn't answer either, try me again once more before giving the callback message.
+Rep: So retry count is 2 total?
+Caller: Yes exactly.
+Rep: Any notes on the after hours flow?
+Caller: For non-emergencies after hours, just collect their info and tell them we'll call back next business day. For emergencies, make it clear we take AC outages seriously especially in summer — be empathetic.
+Rep: Business hours specific flow?
+Caller: During hours, Clara should ask for their zip code too so we know if they're in our service area before we book anything.
+Rep: Notification email?
+Caller: office@swifthvac.com and also send to sandra@swifthvac.com for emergencies.
+Rep: Got it. Saturday 9 to 2 is confirmed?
+Caller: Yes confirmed. Sundays closed.
+Rep: Great Sandra that wraps it up.
+Caller: Perfect thanks.

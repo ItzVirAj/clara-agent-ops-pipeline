@@ -1,0 +1,21 @@
+Rep: This is the demo call for Bolt Electrical Contractors — hi there.
+Caller: Hi yes, I'm Tom Briggs, I'm the owner and main electrician.
+Rep: Great Tom. Walk me through your hours.
+Caller: Monday to Friday 7:30am to 4:30pm. We're based in Phoenix, Arizona — Mountain time. No weekends unless it's emergency.
+Rep: What's an emergency for you?
+Caller: Total power outage to a property, exposed live wiring that's a safety hazard, electrical fires or burning smell from panels, and generator failures for commercial clients.
+Rep: Who do we call for emergencies?
+Caller: Me first — Tom Briggs — 602-881-0344. If I don't answer, call my partner Rick Solis at 602-881-0512.
+Rep: Timeout before trying Rick?
+Caller: Give me about 25 seconds.
+Rep: And non-emergency during business hours?
+Caller: Just transfer to the office. My wife handles the scheduling side.
+Rep: What services do you offer?
+Caller: Residential wiring, panel upgrades, commercial electrical, generator installation and service, EV charger installation, and emergency callouts.
+Rep: Software?
+Caller: We just use QuickBooks and a Google calendar. Nothing fancy.
+Rep: Address?
+Caller: We're at 3320 North 7th Street, Phoenix Arizona 85014.
+Rep: Transfer fail message?
+Caller: Say that we're aware of the issue and an electrician will call them back within 30 minutes guaranteed.
+Rep: Perfect Tom that's 

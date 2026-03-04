@@ -1,0 +1,20 @@
+Rep: Hi Pam, onboarding call for Guardian. Just a few things.
+Caller: Of course, go ahead.
+Rep: Main business phone?
+Caller: 404-512-0700.
+Rep: Transfer — 30 seconds to David, retries?
+Caller: Try primary twice, then secondary once, then give the callback message.
+Rep: So retry count 3 total?
+Caller: Yes that's right.
+Rep: After hours non-emergency flow?
+Caller: Collect their name, number, and the property address. Tell them a Guardian representative will contact them next business day. Don't say morning specifically because sometimes we're in the field early.
+Rep: Business hours flow?
+Caller: During hours, ask for the property address first — we cover the greater Atlanta metro area only. If it's outside our service area, politely let them know and suggest they contact a local provider.
+Rep: Notification email?
+Caller: scheduling@guardiansprinkler.com
+Rep: ServiceTrade — any notes for Clara on that?
+Caller: No, don't mention it to callers. Internal only.
+Rep: Timezone confirmed as Eastern?
+Caller: Yes, America/New_York.
+Rep: Great Pam, Guardian is all set.
+Caller: Thank you so much.

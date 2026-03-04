@@ -1,0 +1,24 @@
+Rep: Good morning, this is the demo call for Guardian Sprinkler Systems?
+Caller: Yes, this is Pam Wheeler, I'm the office manager.
+Rep: Hi Pam. Let's go through the setup details. Business hours?
+Caller: Monday through Friday 8am to 5pm Eastern time. We're in Atlanta Georgia.
+Rep: Weekends?
+Caller: No regular hours on weekends. Emergency only.
+Rep: What's an emergency for Guardian?
+Caller: A sprinkler head that has activated unintentionally, any system that's showing a supervisory alarm or trouble signal that the property manager says is critical, and backflow preventer failures during freeze events.
+Rep: Emergency routing?
+Caller: Primary is our field supervisor Ray Thornton — 404-512-0773. Secondary is our owner David Park at 404-512-0901.
+Rep: Timeout before secondary?
+Caller: 30 seconds is fine.
+Rep: Non-emergency during hours?
+Caller: Transfer to our office. We have a dispatcher who handles scheduling.
+Rep: Services?
+Caller: Sprinkler system installation, inspection and testing, backflow preventer testing and repair, fire pump service, and system monitoring.
+Rep: Any integrations?
+Caller: We're on ServiceTrade as well. And we do reporting through their portal.
+Rep: Office address?
+Caller: 1755 Commerce Drive Northwest, Atlanta Georgia 30318.
+Rep: Transfer fail message?
+Caller: Please let them know that Guardian has a 24 hour emergency response team and someone will reach out within 15 minutes.
+Rep: That's everything Pam, thank you so much.
+Caller: Thank you, bye.

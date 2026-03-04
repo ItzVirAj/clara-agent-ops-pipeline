@@ -1,0 +1,16 @@
+Rep: Hey Tom, onboarding call. Quick gaps to fill.
+Caller: Sure.
+Rep: Main business number?
+Caller: 602-881-0300.
+Rep: Transfer timeout 25 seconds to Rick — retries?
+Caller: Just once. If both of us don't answer, leave the callback message.
+Rep: After hours non-emergency?
+Caller: Tell them to call back during business hours — Monday to Friday 7:30 to 4:30. Don't collect info for non-emergencies after hours, just redirect.
+Rep: Business hours flow?
+Caller: During hours, Clara should ask what type of job — residential or commercial — before routing. Commercial jobs come to me directly, residential goes to scheduling.
+Rep: Any specific notes on EV charger inquiries?
+Caller: Yeah those are popular right now. If someone asks about EV charger installation, Clara should say we offer free quotes and ask if they want to schedule one.
+Rep: Notification email?
+Caller: admin@boltelectrical.com
+Rep: Great Tom, all set.
+Caller: Thanks a lot.
