@@ -109,14 +109,15 @@ clara-agent-ops-pipeline/
 
 # Setup
 
-## 1. Clone Repository
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/ItzVirAj/clara-agent-ops-pipeline.git
 cd clara-agent-ops-pipeline
 ```
 
-## 2. Create Virtual Environment
+## Create Virtual Environment
 
 ```bash
 python -m venv venv
@@ -125,7 +126,7 @@ venv\Scripts\activate
 # source venv/bin/activate (Mac/Linux)
 ```
 
-## 3. Install Dependencies
+## Install Dependencies
 
 ```bash
 python -m pip install -r requirements.txt
@@ -155,6 +156,14 @@ LOG_DIR=logs
 DATA_DEMO_DIR=data/demo
 DATA_ONBOARD_DIR=data/onboard
 ```
+
+### Dashboard (Web UI)
+
+Start the Flask dashboard:
+
+```bash
+python pipe/server.py
+
 
 ### Get Gemini API Key
 
@@ -285,6 +294,15 @@ http://localhost:5678
 Import workflow files and configure environment variables.
 
 Without n8n, the Python runners operate fully standalone.
+
+---
+
+### Docker (optional)
+
+Alternatively run via Docker:
+
+```bash
+docker-compose up
 
 ---
 

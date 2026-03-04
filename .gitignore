@@ -29,3 +29,22 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
+# flask
+__pycache__/
+*.pyc
+
+# audio files — large, not for repo
+data/onboard/*.m4a
+data/onboard/*.mp3
+data/onboard/*.wav
+data/demo/*.m4a
+data/demo/*.mp3
+data/demo/*.wav
+
+# raw transcripts — large
+outputs/accounts/*/v1/raw_transcript.txt
+outputs/accounts/*/v2/raw_transcript.txt
+
+# sqlite db — regenerated on run
+outputs/acct_registry.db

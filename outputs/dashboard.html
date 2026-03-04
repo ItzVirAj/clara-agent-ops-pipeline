@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clara Agent Ops — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <!-- header -->
+  <div class="hdr">
+    <div class="hdr-left">
+      <h1>⚡ Clara Agent Ops</h1>
+      <p>Automated onboarding pipeline dashboard</p>
+    </div>
+    <div class="hdr-actions">
+      <button class="btn btn-green" onclick="runBatch()">
+        ▶ Run Batch (All Accounts)
+      </button>
+      <button class="btn btn-blue" onclick="refreshAccounts()">
+        ↻ Refresh
+      </button>
+    </div>
+  </div>
+
+  <!-- metrics row -->
+  <div class="metrics" id="metrics" style="display:none">
+    <div class="metric-card green">
+      <div class="m-val" id="m-total">—</div>
+      <div class="m-lbl">Total Accounts</div>
+    </div>
+    <div class="metric-card green">
+      <div class="m-val" id="m-ok">—</div>
+      <div class="m-lbl">Succeeded</div>
+    </div>
+    <div class="metric-card red">
+      <div class="m-val" id="m-fail">—</div>
+      <div class="m-lbl">Failed</div>
+    </div>
+    <div class="metric-card blue">
+      <div class="m-val" id="m-changes">—</div>
+      <div class="m-lbl">Total Changes</div>
+    </div>
+    <div class="metric-card amber">
+      <div class="m-val" id="m-openqs">—</div>
+      <div class="m-lbl">Open Questions</div>
+    </div>
+  </div>
+
+  <!-- run pipeline section -->
+  <div class="run-section" id="run-section">
+    <div class="run-hdr">
+      <h2>Run Pipeline</h2>
+      <span class="badge badge-gray">single account</span>
+    </div>
+    <div class="run-body">
+      <div class="run-row">
+        <select id="demo-file" class="sel">
+          <option value="">— select demo file —</option>
+        </select>
+        <button class="btn btn-blue" onclick="runDemo()">
+          ▶ Pipeline A (Demo)
+        </button>
+      </div>
+      <div class="run-row">
+        <select id="onboard-file" class="sel">
+          <option value="">— select onboard file —</option>
+        </select>
+        <input
+          id="onboard-acct"
+          class="inp"
+          placeholder="ACCT-XXXXXXXX"
+          type="text"
+        />
+        <button class="btn btn-green" onclick="runOnboard()">
+          ▶ Pipeline B (Onboard)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- log panel -->
+  <div class="log-panel" id="log-panel" style="display:none">
+    <div class="log-hdr">
+      <span id="log-title">Run Log</span>
+      <button class="close-btn" onclick="closeLog()">✕</button>
+    </div>
+    <div class="log-body" id="log-body"></div>
+  </div>
+
+  <!-- diff panel -->
+  <div class="diff-panel" id="diff-panel">
+    <div class="diff-panel-hdr">
+      <h2 id="diff-title">Changelog</h2>
+      <button class="close-btn" onclick="closeDiff()">✕</button>
+    </div>
+    <div class="col-hdrs">
+      <div class="col-hdr">Field</div>
+      <div class="col-hdr">Action</div>
+      <div class="col-hdr">v1 Value</div>
+      <div class="col-hdr">v2 Value</div>
+    </div>
+    <div id="diff-rows"></div>
+  </div>
+
+  <!-- account grid -->
+  <div class="section-title" id="acct-title" style="display:none">
+    Processed Accounts
+  </div>
+  <div class="acct-grid" id="acct-grid"></div>
+
+  <!-- empty state -->
+  <div class="empty" id="empty-state">
+    <div class="empty-icon">📊</div>
+    <p>No accounts processed yet</p>
+    <p class="empty-sub">Run a pipeline or batch to get started</p>
+  </div>
+
+  <script src="dashboard.js"></script>
+
+</body>
+</html>
