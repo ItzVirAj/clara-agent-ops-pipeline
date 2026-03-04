@@ -1,0 +1,85 @@
+{
+  "acct_id": "ACCT-956D1759",
+  "co_name": "Ben's Electric Solutions",
+  "co_phone": null,
+  "co_addr": null,
+  "timezone": null,
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "16:35",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "16:35",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "16:35",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "16:35",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "16:35",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "new clients",
+    "small jobs",
+    "service calls"
+  ],
+  "emrg_triggers": [
+    "emergency calls for existing builders",
+    "emergency calls for specific property manager (GNM Pressure Washing)"
+  ],
+  "emrg_routing": {
+    "primary_name": "Shelley (GNM Pressure Washing)",
+    "primary_ph": null,
+    "secondary_name": null,
+    "secondary_ph": null,
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "forwarding",
+    "contact_name": "Ben",
+    "contact_ph": null,
+    "notes": "Initially, calls will forward to Clara if not answered or declined from Ben's main line. Once Ben's second personal number is active, Clara will be the first point of contact for the main business line and transfer to Ben's second number as needed."
+  },
+  "xfer_rules": {
+    "timeout_sec": null,
+    "retry_count": null,
+    "fail_msg": null
+  },
+  "integrations": [],
+  "aft_hrs_flow": "For all customers except the specific property manager, callers will be informed that the business will get back to them on the next business day. For emergency calls from the specific property manager, calls will be patched through.",
+  "biz_hrs_flow": "Clara will answer incoming calls. If a customer requests to speak with a person, Clara will transfer the call to Ben's designated transfer number. Clara will mention the service call fee ($115 call out, then $98/hr billed in half-hour increments at $49) if asked by the caller.",
+  "open_qs": [
+    "What is the specific IANA timezone for the business operations?",
+    "What is the primary phone number for Ben's business that will be forwarded to Clara?",
+    "What is the second phone number for Ben to which Clara should transfer calls?",
+    "What is Shelley's (GNM Pressure Washing) contact phone number for emergency routing?",
+    "What is the full physical address of Ben's Electric Solutions?"
+  ],
+  "notes": "Ben is a sole proprietor handling all calls. Notifications for new calls will be sent via email to info@Ben'sElectricSolutionsteam.com and via SMS to Ben's current main phone number. Clara is being configured to handle new clients, small jobs, and service calls, particularly for those without an existing relationship. The emergency client, GNM Pressure Washing, manages approximately 20 gas stations (Chevron and SOs) for which emergency services are provided after hours. A meeting is scheduled for Friday at 2 PM to review test calls and the dashboard. Pavan is the dedicated point of contact.",
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-04T09:05:45.302684+00:00",
+  "updated_at": "2026-03-04T09:08:50.603702+00:00"
+}

@@ -1,0 +1,92 @@
+{
+  "acct_id": "ACCT-8219106F",
+  "co_name": "Swift HVAC Services",
+  "co_phone": null,
+  "co_addr": "9200 Carpenter Freeway, Dallas Texas 75247",
+  "timezone": "America/Chicago",
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "sat": {
+      "open": "09:00",
+      "close": "14:00",
+      "active": true
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "AC installation and repair",
+    "heating system service",
+    "duct cleaning",
+    "commercial refrigeration",
+    "preventive maintenance contracts"
+  ],
+  "emrg_triggers": [
+    "AC goes completely out (with elderly people or young kids in house)",
+    "gas leak related to heating systems",
+    "carbon monoxide situations",
+    "commercial refrigeration failures for restaurants"
+  ],
+  "emrg_routing": {
+    "primary_name": "Sandra",
+    "primary_ph": "214-773-0482",
+    "secondary_name": "Carlos Mendez",
+    "secondary_ph": "214-773-0619",
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "office line",
+    "contact_name": null,
+    "contact_ph": null,
+    "notes": "We handle quotes and scheduling in-house."
+  },
+  "xfer_rules": {
+    "timeout_sec": null,
+    "retry_count": null,
+    "fail_msg": null
+  },
+  "integrations": [
+    "Jobber"
+  ],
+  "aft_hrs_flow": "Tell them we have a technician on call and they will receive a call back within 20 minutes. And collect their name, number and address.",
+  "biz_hrs_flow": null,
+  "open_qs": [
+    "What is the office phone number for non-emergency calls?",
+    "What is the preferred order for emergency routing (e.g., call primary, then secondary; or call both simultaneously)?",
+    "What is the timeout duration for call transfers in seconds?",
+    "How many times should the system attempt to retry a call transfer?",
+    "What is the general call flow for calls received during business hours?",
+    "What message should be played if a call transfer fails (during business hours)?"
+  ],
+  "notes": null,
+  "memo_ver": "v1_demo",
+  "created_at": "2026-03-04T09:11:21.216763+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,99 @@
+{
+  "acct_id": "ACCT-F25F6A00",
+  "co_name": "Guardian",
+  "co_phone": "404-512-0700",
+  "co_addr": "1755 Commerce Drive Northwest, Atlanta Georgia 30318",
+  "timezone": "America/New_York",
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Sprinkler system installation",
+    "inspection and testing",
+    "backflow preventer testing and repair",
+    "fire pump service",
+    "system monitoring"
+  ],
+  "emrg_triggers": [
+    "A sprinkler head that has activated unintentionally",
+    "any system that's showing a supervisory alarm or trouble signal that the property manager says is critical",
+    "backflow preventer failures during freeze events"
+  ],
+  "emrg_routing": {
+    "primary_name": "Ray Thornton",
+    "primary_ph": "404-512-0773",
+    "secondary_name": "David Park",
+    "secondary_ph": "404-512-0901",
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "transfer",
+    "contact_name": null,
+    "contact_ph": null,
+    "notes": "We have a dispatcher who handles scheduling."
+  },
+  "xfer_rules": {
+    "timeout_sec": 30,
+    "retry_count": 3,
+    "fail_msg": "Please let them know that Guardian has a 24 hour emergency response team and someone will reach out within 15 minutes."
+  },
+  "integrations": [
+    "ServiceTrade"
+  ],
+  "aft_hrs_flow": "Collect their name, number, and the property address. Tell them a Guardian representative will contact them next business day. Don't say morning specifically because sometimes we're in the field early.",
+  "biz_hrs_flow": "During hours, ask for the property address first \u2014 we cover the greater Atlanta metro area only. If it's outside our service area, politely let them know and suggest they contact a local provider.",
+  "open_qs": [
+    "What is Guardian's physical address?",
+    "What are Guardian's business hours for each day of the week (Monday-Sunday)?",
+    "What specific services does Guardian provide?",
+    "What criteria define an emergency call?",
+    "Who is the primary contact for emergency transfers?",
+    "What is the phone number for the primary emergency contact?",
+    "Who is the secondary contact for emergency transfers?",
+    "What is the phone number for the secondary emergency contact?",
+    "What is the routing order for emergency contacts (e.g., primary, then secondary)?",
+    "What type of non-emergency routing should be configured (e.g., transfer, voicemail, email)?",
+    "Who is the contact person for non-emergency calls?",
+    "What is the phone number for the non-emergency contact?",
+    "Are there any specific notes for non-emergency call routing?",
+    "What is the exact callback message to be given if transfers fail?"
+  ],
+  "notes": "Internal note: Do not mention ServiceTrade to callers.",
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-04T09:10:21.181988+00:00",
+  "updated_at": "2026-03-04T09:11:06.876866+00:00"
+}

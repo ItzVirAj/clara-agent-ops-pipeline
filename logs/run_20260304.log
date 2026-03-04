@@ -319,3 +319,400 @@
 2026-03-04 12:34:53 | run_batch  | INFO    | total: 1 | ok: 1 | failed: 0
 2026-03-04 12:41:51 | task_push  | INFO    | pushing task | ACCT-D4F10BF2 | status: v1_done
 2026-03-04 12:41:53 | task_push  | INFO    | issue created → #1 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/1
+2026-03-04 14:34:23 | run_batch  | INFO    | ═══ BATCH START ═══
+2026-03-04 14:34:23 | run_batch  | INFO    | found 5 account pairs to process
+2026-03-04 14:34:23 | run_batch  | INFO    | ── processing: apex_fire ──
+2026-03-04 14:34:23 | run_demo   | INFO    | ═══ PIPELINE A START | apex_fire_demo.txt ═══
+2026-03-04 14:34:23 | ingest     | INFO    | ingesting | file: apex_fire_demo.txt | call_type: demo
+2026-03-04 14:34:23 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:34:23 | ingest     | INFO    | new acct_id assigned: ACCT-8E37CECD
+2026-03-04 14:34:23 | ingest     | INFO    | loading transcript: apex_fire_demo.txt
+2026-03-04 14:34:23 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-8E37CECD\v1\raw_transcript.txt
+2026-03-04 14:34:23 | ingest     | INFO    | ingest complete | acct_id: ACCT-8E37CECD
+2026-03-04 14:34:23 | extract    | INFO    | starting extraction | acct_id: ACCT-8E37CECD | memo_ver: v1_demo
+2026-03-04 14:34:23 | extract    | DEBUG   | prompt built — 4122 chars
+2026-03-04 14:34:23 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:34:36 | extract    | DEBUG   | raw gemini response length: 2301 chars
+2026-03-04 14:34:36 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:34:36 | extract    | INFO    | fields filled: 14 | null fields: 5 | open_qs: 5
+2026-03-04 14:34:36 | extract    | INFO    | open questions flagged:
+2026-03-04 14:34:36 | extract    | INFO    |   ↳ What is the main company phone number for Apex Fire Protection?
+2026-03-04 14:34:36 | extract    | INFO    |   ↳ What is the phone number for the main office line/receptionist for non-emergency calls?
+2026-03-04 14:34:36 | extract    | INFO    |   ↳ How many times should Clara attempt to reach Mike Russo (primary on-call tech) before trying Janet Lee (secondary service coordinator)?
+2026-03-04 14:34:36 | extract    | INFO    |   ↳ What is the specific call flow for non-emergency calls received during business hours, beyond just routing to the receptionist?
+2026-03-04 14:34:36 | extract    | INFO    |   ↳ What is the specific call flow for non-emergency calls received after business hours?
+2026-03-04 14:34:36 | extract    | INFO    | memo saved → outputs\accounts\ACCT-8E37CECD\v1\memo.json
+2026-03-04 14:34:36 | prmpt_gen  | INFO    | gen agent spec | ACCT-8E37CECD | v1_demo
+2026-03-04 14:34:53 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-8E37CECD\v1
+2026-03-04 14:34:53 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:34:53 | store      | INFO    | acct inserted | ACCT-8E37CECD
+2026-03-04 14:34:53 | task_push  | INFO    | pushing task | ACCT-8E37CECD | status: v1_done
+2026-03-04 14:34:55 | task_push  | INFO    | issue created → #2 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/2
+2026-03-04 14:34:55 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-8E37CECD ═══
+2026-03-04 14:34:55 | run_onboard | INFO    | ═══ PIPELINE B START | apex_fire_onboard.txt | ACCT-8E37CECD ═══
+2026-03-04 14:34:55 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:34:55 | ingest     | INFO    | ingesting | file: apex_fire_onboard.txt | call_type: onboard
+2026-03-04 14:34:55 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:34:55 | ingest     | INFO    | using existing acct_id: ACCT-8E37CECD
+2026-03-04 14:34:55 | ingest     | INFO    | loading transcript: apex_fire_onboard.txt
+2026-03-04 14:34:55 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-8E37CECD\v2\raw_transcript.txt
+2026-03-04 14:34:55 | ingest     | INFO    | ingest complete | acct_id: ACCT-8E37CECD
+2026-03-04 14:34:55 | extract    | INFO    | starting extraction | acct_id: ACCT-8E37CECD | memo_ver: v2_onboard
+2026-03-04 14:34:55 | extract    | DEBUG   | prompt built — 3193 chars
+2026-03-04 14:34:55 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:35:21 | extract    | DEBUG   | raw gemini response length: 2793 chars
+2026-03-04 14:35:21 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:35:21 | extract    | INFO    | fields filled: 12 | null fields: 7 | open_qs: 20
+2026-03-04 14:35:21 | extract    | INFO    | open questions flagged:
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the company name?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the company's physical address?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the company's timezone (IANA format, e.g., America/New_York)?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What are the regular business hours (open and close times) for Monday?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What are the regular business hours (open and close times) for Tuesday?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What are the regular business hours (open and close times) for Wednesday?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What are the regular business hours (open and close times) for Thursday?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What are the regular business hours (open and close times) for Friday?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What services does the business provide?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the primary contact name for emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the primary phone number for emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the secondary contact name for emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the secondary phone number for emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the order of routing for emergencies (e.g., primary then secondary)?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the routing type for non-emergency calls (e.g., direct transfer, voicemail)?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the contact name for non-emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What is the contact phone number for non-emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ Are there any specific notes for non-emergency routing?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ What message should be played if a transfer fails after retries?
+2026-03-04 14:35:21 | extract    | INFO    |   ↳ Are there any external systems or integrations that Clara needs to connect with?
+2026-03-04 14:35:21 | extract    | INFO    | memo saved → outputs\accounts\ACCT-8E37CECD\v2\memo.json
+2026-03-04 14:35:21 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-8E37CECD
+2026-03-04 14:35:21 | patch      | INFO    | v1 memo loaded → outputs\accounts\ACCT-8E37CECD\v1\memo.json
+2026-03-04 14:35:21 | patch      | INFO    | patch complete | changes: 6
+2026-03-04 14:35:21 | patch      | INFO    |   [filled] co_phone
+2026-03-04 14:35:21 | patch      | INFO    |   [updated] emrg_triggers
+2026-03-04 14:35:21 | patch      | INFO    |   [filled] xfer_rules.retry_count
+2026-03-04 14:35:21 | patch      | INFO    |   [filled] aft_hrs_flow
+2026-03-04 14:35:21 | patch      | INFO    |   [filled] biz_hrs_flow
+2026-03-04 14:35:21 | patch      | INFO    |   [updated] open_qs
+2026-03-04 14:35:21 | patch      | INFO    | v2 memo saved    → outputs\accounts\ACCT-8E37CECD\v2\memo.json
+2026-03-04 14:35:21 | patch      | INFO    | changelog saved  → outputs\accounts\ACCT-8E37CECD\changelog.json
+2026-03-04 14:35:21 | prmpt_gen  | INFO    | gen agent spec | ACCT-8E37CECD | v2_onboard
+2026-03-04 14:35:43 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-8E37CECD\v2
+2026-03-04 14:35:43 | task_push  | INFO    | pushing task | ACCT-8E37CECD | status: v2_done
+2026-03-04 14:35:45 | task_push  | INFO    | issue updated → #2 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/2
+2026-03-04 14:35:45 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-8E37CECD ═══
+2026-03-04 14:35:45 | run_batch  | INFO    | ── processing: bens_electric ──
+2026-03-04 14:35:45 | run_demo   | INFO    | ═══ PIPELINE A START | bens_electric_demo.txt ═══
+2026-03-04 14:35:45 | ingest     | INFO    | ingesting | file: bens_electric_demo.txt | call_type: demo
+2026-03-04 14:35:45 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:35:45 | ingest     | INFO    | new acct_id assigned: ACCT-956D1759
+2026-03-04 14:35:45 | ingest     | INFO    | loading transcript: bens_electric_demo.txt
+2026-03-04 14:35:45 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-956D1759\v1\raw_transcript.txt
+2026-03-04 14:35:45 | ingest     | INFO    | ingest complete | acct_id: ACCT-956D1759
+2026-03-04 14:35:45 | extract    | INFO    | starting extraction | acct_id: ACCT-956D1759 | memo_ver: v1_demo
+2026-03-04 14:35:45 | extract    | DEBUG   | prompt built — 20703 chars
+2026-03-04 14:35:45 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:36:14 | extract    | DEBUG   | raw gemini response length: 2363 chars
+2026-03-04 14:36:14 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:36:14 | extract    | INFO    | fields filled: 12 | null fields: 7 | open_qs: 5
+2026-03-04 14:36:14 | extract    | INFO    | open questions flagged:
+2026-03-04 14:36:14 | extract    | INFO    |   ↳ What is the official company name for Ben's business?
+2026-03-04 14:36:14 | extract    | INFO    |   ↳ What is Ben's main business phone number (the one Clara will receive forwarded calls from and use for SMS notifications)?
+2026-03-04 14:36:14 | extract    | INFO    |   ↳ What is Ben's new personal phone number, which Clara will use to transfer calls (both emergency and non-emergency) to Ben?
+2026-03-04 14:36:14 | extract    | INFO    |   ↳ What is the company's physical address?
+2026-03-04 14:36:14 | extract    | INFO    |   ↳ What is the company's operating timezone in IANA format (e.g., America/New_York)?
+2026-03-04 14:36:14 | extract    | INFO    | memo saved → outputs\accounts\ACCT-956D1759\v1\memo.json
+2026-03-04 14:36:14 | prmpt_gen  | INFO    | gen agent spec | ACCT-956D1759 | v1_demo
+2026-03-04 14:36:30 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-956D1759\v1
+2026-03-04 14:36:30 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:36:30 | store      | INFO    | acct inserted | ACCT-956D1759
+2026-03-04 14:36:30 | task_push  | INFO    | pushing task | ACCT-956D1759 | status: v1_done
+2026-03-04 14:36:31 | task_push  | INFO    | issue created → #3 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/3
+2026-03-04 14:36:31 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-956D1759 ═══
+2026-03-04 14:36:31 | run_onboard | INFO    | ═══ PIPELINE B START | bens_electric_onboard.m4a | ACCT-956D1759 ═══
+2026-03-04 14:36:31 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:36:31 | ingest     | INFO    | ingesting | file: bens_electric_onboard.m4a | call_type: onboard
+2026-03-04 14:36:31 | ingest     | INFO    | src_type detected: audio
+2026-03-04 14:36:31 | ingest     | INFO    | using existing acct_id: ACCT-956D1759
+2026-03-04 14:36:31 | ingest     | INFO    | transcribing audio: bens_electric_onboard.m4a
+2026-03-04 14:36:36 | ingest     | INFO    | detected language: en | duration: 1548.0s
+2026-03-04 14:38:31 | ingest     | DEBUG   | transcript length: 18489 chars
+2026-03-04 14:38:31 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-956D1759\v2\raw_transcript.txt
+2026-03-04 14:38:31 | ingest     | INFO    | ingest complete | acct_id: ACCT-956D1759
+2026-03-04 14:38:31 | extract    | INFO    | starting extraction | acct_id: ACCT-956D1759 | memo_ver: v2_onboard
+2026-03-04 14:38:31 | extract    | DEBUG   | prompt built — 20650 chars
+2026-03-04 14:38:31 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:38:50 | extract    | DEBUG   | raw gemini response length: 3179 chars
+2026-03-04 14:38:50 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:38:50 | extract    | INFO    | fields filled: 14 | null fields: 5 | open_qs: 5
+2026-03-04 14:38:50 | extract    | INFO    | open questions flagged:
+2026-03-04 14:38:50 | extract    | INFO    |   ↳ What is the specific IANA timezone for the business operations?
+2026-03-04 14:38:50 | extract    | INFO    |   ↳ What is the primary phone number for Ben's business that will be forwarded to Clara?
+2026-03-04 14:38:50 | extract    | INFO    |   ↳ What is the second phone number for Ben to which Clara should transfer calls?
+2026-03-04 14:38:50 | extract    | INFO    |   ↳ What is Shelley's (GNM Pressure Washing) contact phone number for emergency routing?
+2026-03-04 14:38:50 | extract    | INFO    |   ↳ What is the full physical address of Ben's Electric Solutions?
+2026-03-04 14:38:50 | extract    | INFO    | memo saved → outputs\accounts\ACCT-956D1759\v2\memo.json
+2026-03-04 14:38:50 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-956D1759
+2026-03-04 14:38:50 | patch      | INFO    | v1 memo loaded → outputs\accounts\ACCT-956D1759\v1\memo.json
+2026-03-04 14:38:50 | patch      | INFO    | patch complete | changes: 20
+2026-03-04 14:38:50 | patch      | INFO    |   [filled] co_name
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.mon.open
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.mon.close
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.tue.open
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.tue.close
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.wed.open
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.wed.close
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.thu.open
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.thu.close
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.fri.open
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs.fri.close
+2026-03-04 14:38:50 | patch      | INFO    |   [filled] svcs
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] emrg_triggers
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] emrg_routing.primary_name
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] non_emrg_routing.type
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] non_emrg_routing.notes
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] aft_hrs_flow
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] biz_hrs_flow
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] open_qs
+2026-03-04 14:38:50 | patch      | INFO    |   [updated] notes
+2026-03-04 14:38:50 | patch      | INFO    | v2 memo saved    → outputs\accounts\ACCT-956D1759\v2\memo.json
+2026-03-04 14:38:50 | patch      | INFO    | changelog saved  → outputs\accounts\ACCT-956D1759\changelog.json
+2026-03-04 14:38:50 | prmpt_gen  | INFO    | gen agent spec | ACCT-956D1759 | v2_onboard
+2026-03-04 14:39:14 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-956D1759\v2
+2026-03-04 14:39:14 | task_push  | INFO    | pushing task | ACCT-956D1759 | status: v2_done
+2026-03-04 14:39:15 | task_push  | INFO    | issue updated → #3 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/3
+2026-03-04 14:39:15 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-956D1759 ═══
+2026-03-04 14:39:15 | run_batch  | INFO    | ── processing: bolt_electric ──
+2026-03-04 14:39:15 | run_demo   | INFO    | ═══ PIPELINE A START | bolt_electric_demo.txt ═══
+2026-03-04 14:39:15 | ingest     | INFO    | ingesting | file: bolt_electric_demo.txt | call_type: demo
+2026-03-04 14:39:15 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:39:15 | ingest     | INFO    | new acct_id assigned: ACCT-420DE3CD
+2026-03-04 14:39:15 | ingest     | INFO    | loading transcript: bolt_electric_demo.txt
+2026-03-04 14:39:15 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-420DE3CD\v1\raw_transcript.txt
+2026-03-04 14:39:15 | ingest     | INFO    | ingest complete | acct_id: ACCT-420DE3CD
+2026-03-04 14:39:15 | extract    | INFO    | starting extraction | acct_id: ACCT-420DE3CD | memo_ver: v1_demo
+2026-03-04 14:39:15 | extract    | DEBUG   | prompt built — 3523 chars
+2026-03-04 14:39:15 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:39:36 | extract    | DEBUG   | raw gemini response length: 2242 chars
+2026-03-04 14:39:36 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:39:36 | extract    | INFO    | fields filled: 15 | null fields: 4 | open_qs: 4
+2026-03-04 14:39:36 | extract    | INFO    | open questions flagged:
+2026-03-04 14:39:36 | extract    | INFO    |   ↳ What is the company's main phone number?
+2026-03-04 14:39:36 | extract    | INFO    |   ↳ What is the phone number for the office transfer during business hours?
+2026-03-04 14:39:36 | extract    | INFO    |   ↳ How many times should the agent attempt to transfer a call before giving up?
+2026-03-04 14:39:36 | extract    | INFO    |   ↳ What should the voice agent do with non-emergency calls received outside of business hours?
+2026-03-04 14:39:36 | extract    | INFO    | memo saved → outputs\accounts\ACCT-420DE3CD\v1\memo.json
+2026-03-04 14:39:36 | prmpt_gen  | INFO    | gen agent spec | ACCT-420DE3CD | v1_demo
+2026-03-04 14:39:49 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-420DE3CD\v1
+2026-03-04 14:39:49 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:39:49 | store      | INFO    | acct inserted | ACCT-420DE3CD
+2026-03-04 14:39:49 | task_push  | INFO    | pushing task | ACCT-420DE3CD | status: v1_done
+2026-03-04 14:39:51 | task_push  | INFO    | issue created → #4 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/4
+2026-03-04 14:39:51 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-420DE3CD ═══
+2026-03-04 14:39:51 | run_onboard | INFO    | ═══ PIPELINE B START | bolt_electric_onboard.txt | ACCT-420DE3CD ═══
+2026-03-04 14:39:51 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:39:51 | ingest     | INFO    | ingesting | file: bolt_electric_onboard.txt | call_type: onboard
+2026-03-04 14:39:51 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:39:51 | ingest     | INFO    | using existing acct_id: ACCT-420DE3CD
+2026-03-04 14:39:51 | ingest     | INFO    | loading transcript: bolt_electric_onboard.txt
+2026-03-04 14:39:51 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-420DE3CD\v2\raw_transcript.txt
+2026-03-04 14:39:51 | ingest     | INFO    | ingest complete | acct_id: ACCT-420DE3CD
+2026-03-04 14:39:51 | extract    | INFO    | starting extraction | acct_id: ACCT-420DE3CD | memo_ver: v2_onboard
+2026-03-04 14:39:51 | extract    | DEBUG   | prompt built — 3102 chars
+2026-03-04 14:39:51 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:40:09 | extract    | DEBUG   | raw gemini response length: 2684 chars
+2026-03-04 14:40:09 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:40:09 | extract    | INFO    | fields filled: 12 | null fields: 7 | open_qs: 10
+2026-03-04 14:40:09 | extract    | INFO    | open questions flagged:
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What is the company's full legal name?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What is the company's physical address?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What is the business's timezone in IANA format (e.g., America/Los_Angeles)?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What are the specific triggers or keywords for an emergency call?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ Who is the primary contact (name and phone number) for emergency routing?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ Who is the secondary contact (name and phone number) for emergency routing, and what is the desired order if both are available?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What is the phone number for the scheduling department for residential jobs?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What is Tom's full name and phone number for commercial job routing?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ Are there any specific integrations needed (e.g., CRM, calendar)?
+2026-03-04 14:40:09 | extract    | INFO    |   ↳ What is the email address for notifications (e.g., admin@boltelectrical.com)?
+2026-03-04 14:40:09 | extract    | INFO    | memo saved → outputs\accounts\ACCT-420DE3CD\v2\memo.json
+2026-03-04 14:40:09 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-420DE3CD
+2026-03-04 14:40:09 | patch      | INFO    | v1 memo loaded → outputs\accounts\ACCT-420DE3CD\v1\memo.json
+2026-03-04 14:40:09 | patch      | INFO    | patch complete | changes: 10
+2026-03-04 14:40:09 | patch      | INFO    |   [filled] co_phone
+2026-03-04 14:40:09 | patch      | INFO    |   [updated] svcs
+2026-03-04 14:40:09 | patch      | INFO    |   [updated] non_emrg_routing.type
+2026-03-04 14:40:09 | patch      | INFO    |   [filled] non_emrg_routing.contact_name
+2026-03-04 14:40:09 | patch      | INFO    |   [updated] non_emrg_routing.notes
+2026-03-04 14:40:09 | patch      | INFO    |   [filled] xfer_rules.retry_count
+2026-03-04 14:40:09 | patch      | INFO    |   [updated] xfer_rules.fail_msg
+2026-03-04 14:40:09 | patch      | INFO    |   [filled] aft_hrs_flow
+2026-03-04 14:40:09 | patch      | INFO    |   [filled] biz_hrs_flow
+2026-03-04 14:40:09 | patch      | INFO    |   [updated] open_qs
+2026-03-04 14:40:09 | patch      | INFO    | v2 memo saved    → outputs\accounts\ACCT-420DE3CD\v2\memo.json
+2026-03-04 14:40:09 | patch      | INFO    | changelog saved  → outputs\accounts\ACCT-420DE3CD\changelog.json
+2026-03-04 14:40:09 | prmpt_gen  | INFO    | gen agent spec | ACCT-420DE3CD | v2_onboard
+2026-03-04 14:40:19 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-420DE3CD\v2
+2026-03-04 14:40:19 | task_push  | INFO    | pushing task | ACCT-420DE3CD | status: v2_done
+2026-03-04 14:40:21 | task_push  | INFO    | issue updated → #4 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/4
+2026-03-04 14:40:21 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-420DE3CD ═══
+2026-03-04 14:40:21 | run_batch  | INFO    | ── processing: guardian_sprinkler ──
+2026-03-04 14:40:21 | run_demo   | INFO    | ═══ PIPELINE A START | guardian_sprinkler_demo.txt ═══
+2026-03-04 14:40:21 | ingest     | INFO    | ingesting | file: guardian_sprinkler_demo.txt | call_type: demo
+2026-03-04 14:40:21 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:40:21 | ingest     | INFO    | new acct_id assigned: ACCT-F25F6A00
+2026-03-04 14:40:21 | ingest     | INFO    | loading transcript: guardian_sprinkler_demo.txt
+2026-03-04 14:40:21 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-F25F6A00\v1\raw_transcript.txt
+2026-03-04 14:40:21 | ingest     | INFO    | ingest complete | acct_id: ACCT-F25F6A00
+2026-03-04 14:40:21 | extract    | INFO    | starting extraction | acct_id: ACCT-F25F6A00 | memo_ver: v1_demo
+2026-03-04 14:40:21 | extract    | DEBUG   | prompt built — 3650 chars
+2026-03-04 14:40:21 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:40:35 | extract    | DEBUG   | raw gemini response length: 2465 chars
+2026-03-04 14:40:35 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:40:35 | extract    | INFO    | fields filled: 14 | null fields: 5 | open_qs: 6
+2026-03-04 14:40:35 | extract    | INFO    | open questions flagged:
+2026-03-04 14:40:35 | extract    | INFO    |   ↳ What is the main business phone number for Guardian Sprinkler Systems?
+2026-03-04 14:40:35 | extract    | INFO    |   ↳ Is the emergency routing sequential (primary then secondary) or simultaneous?
+2026-03-04 14:40:35 | extract    | INFO    |   ↳ What is the phone number for the office dispatcher?
+2026-03-04 14:40:35 | extract    | INFO    |   ↳ How many times should the system retry the transfer before sending the fail message?
+2026-03-04 14:40:35 | extract    | INFO    |   ↳ What is the specific call flow for calls received outside of regular business hours (e.g., direct to emergency routing, voicemail, IVR menu)?
+2026-03-04 14:40:35 | extract    | INFO    |   ↳ What is the overall call flow for calls received during business hours (e.g., IVR, direct to dispatcher, other)?
+2026-03-04 14:40:35 | extract    | INFO    | memo saved → outputs\accounts\ACCT-F25F6A00\v1\memo.json
+2026-03-04 14:40:35 | prmpt_gen  | INFO    | gen agent spec | ACCT-F25F6A00 | v1_demo
+2026-03-04 14:40:51 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-F25F6A00\v1
+2026-03-04 14:40:51 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:40:51 | store      | INFO    | acct inserted | ACCT-F25F6A00
+2026-03-04 14:40:51 | task_push  | INFO    | pushing task | ACCT-F25F6A00 | status: v1_done
+2026-03-04 14:40:53 | task_push  | INFO    | issue created → #5 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/5
+2026-03-04 14:40:53 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-F25F6A00 ═══
+2026-03-04 14:40:53 | run_onboard | INFO    | ═══ PIPELINE B START | guardian_sprinkler_onboard.txt | ACCT-F25F6A00 ═══
+2026-03-04 14:40:53 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:40:53 | ingest     | INFO    | ingesting | file: guardian_sprinkler_onboard.txt | call_type: onboard
+2026-03-04 14:40:53 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:40:53 | ingest     | INFO    | using existing acct_id: ACCT-F25F6A00
+2026-03-04 14:40:53 | ingest     | INFO    | loading transcript: guardian_sprinkler_onboard.txt
+2026-03-04 14:40:53 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-F25F6A00\v2\raw_transcript.txt
+2026-03-04 14:40:53 | ingest     | INFO    | ingest complete | acct_id: ACCT-F25F6A00
+2026-03-04 14:40:53 | extract    | INFO    | starting extraction | acct_id: ACCT-F25F6A00 | memo_ver: v2_onboard
+2026-03-04 14:40:53 | extract    | DEBUG   | prompt built — 3260 chars
+2026-03-04 14:40:53 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:41:06 | extract    | DEBUG   | raw gemini response length: 2566 chars
+2026-03-04 14:41:06 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:41:06 | extract    | INFO    | fields filled: 15 | null fields: 4 | open_qs: 14
+2026-03-04 14:41:06 | extract    | INFO    | open questions flagged:
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What is Guardian's physical address?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What are Guardian's business hours for each day of the week (Monday-Sunday)?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What specific services does Guardian provide?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What criteria define an emergency call?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ Who is the primary contact for emergency transfers?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What is the phone number for the primary emergency contact?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ Who is the secondary contact for emergency transfers?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What is the phone number for the secondary emergency contact?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What is the routing order for emergency contacts (e.g., primary, then secondary)?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What type of non-emergency routing should be configured (e.g., transfer, voicemail, email)?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ Who is the contact person for non-emergency calls?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What is the phone number for the non-emergency contact?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ Are there any specific notes for non-emergency call routing?
+2026-03-04 14:41:06 | extract    | INFO    |   ↳ What is the exact callback message to be given if transfers fail?
+2026-03-04 14:41:06 | extract    | INFO    | memo saved → outputs\accounts\ACCT-F25F6A00\v2\memo.json
+2026-03-04 14:41:06 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-F25F6A00
+2026-03-04 14:41:06 | patch      | INFO    | v1 memo loaded → outputs\accounts\ACCT-F25F6A00\v1\memo.json
+2026-03-04 14:41:06 | patch      | INFO    | patch complete | changes: 7
+2026-03-04 14:41:06 | patch      | INFO    |   [updated] co_name
+2026-03-04 14:41:06 | patch      | INFO    |   [filled] co_phone
+2026-03-04 14:41:06 | patch      | INFO    |   [filled] xfer_rules.retry_count
+2026-03-04 14:41:06 | patch      | INFO    |   [filled] aft_hrs_flow
+2026-03-04 14:41:06 | patch      | INFO    |   [filled] biz_hrs_flow
+2026-03-04 14:41:06 | patch      | INFO    |   [updated] open_qs
+2026-03-04 14:41:06 | patch      | INFO    |   [filled] notes
+2026-03-04 14:41:06 | patch      | INFO    | v2 memo saved    → outputs\accounts\ACCT-F25F6A00\v2\memo.json
+2026-03-04 14:41:06 | patch      | INFO    | changelog saved  → outputs\accounts\ACCT-F25F6A00\changelog.json
+2026-03-04 14:41:06 | prmpt_gen  | INFO    | gen agent spec | ACCT-F25F6A00 | v2_onboard
+2026-03-04 14:41:18 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-F25F6A00\v2
+2026-03-04 14:41:18 | task_push  | INFO    | pushing task | ACCT-F25F6A00 | status: v2_done
+2026-03-04 14:41:21 | task_push  | INFO    | issue updated → #5 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/5
+2026-03-04 14:41:21 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-F25F6A00 ═══
+2026-03-04 14:41:21 | run_batch  | INFO    | ── processing: swift_hvac ──
+2026-03-04 14:41:21 | run_demo   | INFO    | ═══ PIPELINE A START | swift_hvac_demo.txt ═══
+2026-03-04 14:41:21 | ingest     | INFO    | ingesting | file: swift_hvac_demo.txt | call_type: demo
+2026-03-04 14:41:21 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:41:21 | ingest     | INFO    | new acct_id assigned: ACCT-8219106F
+2026-03-04 14:41:21 | ingest     | INFO    | loading transcript: swift_hvac_demo.txt
+2026-03-04 14:41:21 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-8219106F\v1\raw_transcript.txt
+2026-03-04 14:41:21 | ingest     | INFO    | ingest complete | acct_id: ACCT-8219106F
+2026-03-04 14:41:21 | extract    | INFO    | starting extraction | acct_id: ACCT-8219106F | memo_ver: v1_demo
+2026-03-04 14:41:21 | extract    | DEBUG   | prompt built — 3762 chars
+2026-03-04 14:41:21 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:41:39 | extract    | DEBUG   | raw gemini response length: 2341 chars
+2026-03-04 14:41:39 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:41:39 | extract    | INFO    | fields filled: 15 | null fields: 4 | open_qs: 6
+2026-03-04 14:41:39 | extract    | INFO    | open questions flagged:
+2026-03-04 14:41:39 | extract    | INFO    |   ↳ What is the office phone number for non-emergency calls?
+2026-03-04 14:41:39 | extract    | INFO    |   ↳ What is the preferred order for emergency routing (e.g., call primary, then secondary; or call both simultaneously)?
+2026-03-04 14:41:39 | extract    | INFO    |   ↳ What is the timeout duration for call transfers in seconds?
+2026-03-04 14:41:39 | extract    | INFO    |   ↳ How many times should the system attempt to retry a call transfer?
+2026-03-04 14:41:39 | extract    | INFO    |   ↳ What is the general call flow for calls received during business hours?
+2026-03-04 14:41:39 | extract    | INFO    |   ↳ What message should be played if a call transfer fails (during business hours)?
+2026-03-04 14:41:39 | extract    | INFO    | memo saved → outputs\accounts\ACCT-8219106F\v1\memo.json
+2026-03-04 14:41:39 | prmpt_gen  | INFO    | gen agent spec | ACCT-8219106F | v1_demo
+2026-03-04 14:41:51 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-8219106F\v1
+2026-03-04 14:41:51 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:41:51 | store      | INFO    | acct inserted | ACCT-8219106F
+2026-03-04 14:41:51 | task_push  | INFO    | pushing task | ACCT-8219106F | status: v1_done
+2026-03-04 14:41:52 | task_push  | INFO    | issue created → #6 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/6
+2026-03-04 14:41:52 | run_demo   | INFO    | ═══ PIPELINE A DONE  | acct_id: ACCT-8219106F ═══
+2026-03-04 14:41:52 | run_onboard | INFO    | ═══ PIPELINE B START | swift_hvac_onboard.txt | ACCT-8219106F ═══
+2026-03-04 14:41:52 | store      | INFO    | db ready → outputs\acct_registry.db
+2026-03-04 14:41:52 | ingest     | INFO    | ingesting | file: swift_hvac_onboard.txt | call_type: onboard
+2026-03-04 14:41:52 | ingest     | INFO    | src_type detected: transcript
+2026-03-04 14:41:52 | ingest     | INFO    | using existing acct_id: ACCT-8219106F
+2026-03-04 14:41:52 | ingest     | INFO    | loading transcript: swift_hvac_onboard.txt
+2026-03-04 14:41:52 | ingest     | INFO    | raw transcript saved → outputs\accounts\ACCT-8219106F\v2\raw_transcript.txt
+2026-03-04 14:41:52 | ingest     | INFO    | ingest complete | acct_id: ACCT-8219106F
+2026-03-04 14:41:52 | extract    | INFO    | starting extraction | acct_id: ACCT-8219106F | memo_ver: v2_onboard
+2026-03-04 14:41:52 | extract    | DEBUG   | prompt built — 3226 chars
+2026-03-04 14:41:52 | extract    | INFO    | calling gemini 2.5 flash for extraction...
+2026-03-04 14:42:13 | extract    | DEBUG   | raw gemini response length: 2601 chars
+2026-03-04 14:42:13 | extract    | INFO    | gemini response parsed successfully
+2026-03-04 14:42:13 | extract    | INFO    | fields filled: 13 | null fields: 6 | open_qs: 17
+2026-03-04 14:42:13 | extract    | INFO    | open questions flagged:
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What is the company's full name?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What is the company's full address?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What is the business's timezone (IANA format, e.g., America/Chicago)?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What are the business hours for Monday?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What are the business hours for Tuesday?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What are the business hours for Wednesday?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What are the business hours for Thursday?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What are the business hours for Friday?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What services does the business offer?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ Who is the primary contact for emergency call routing?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What is the phone number for the primary emergency contact?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ Is there a secondary contact for emergency call routing? If so, what is their name?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What is the phone number for the secondary emergency contact?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ If multiple contacts, what is the preferred order for emergency call routing?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What is Carlos's phone number for non-emergency transfers?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ What should the callback message say if the transfer fails?
+2026-03-04 14:42:13 | extract    | INFO    |   ↳ Are there any specific integrations (e.g., CRM, scheduling software) Clara needs to connect with?
+2026-03-04 14:42:13 | extract    | INFO    | memo saved → outputs\accounts\ACCT-8219106F\v2\memo.json
+2026-03-04 14:42:13 | patch      | INFO    | patching v1 → v2 | acct_id: ACCT-8219106F
+2026-03-04 14:42:13 | patch      | INFO    | v1 memo loaded → outputs\accounts\ACCT-8219106F\v1\memo.json
+2026-03-04 14:42:13 | patch      | INFO    | patch complete | changes: 10
+2026-03-04 14:42:13 | patch      | INFO    |   [filled] co_phone
+2026-03-04 14:42:13 | patch      | INFO    |   [updated] emrg_triggers
+2026-03-04 14:42:13 | patch      | INFO    |   [updated] non_emrg_routing.type
+2026-03-04 14:42:13 | patch      | INFO    |   [filled] non_emrg_routing.contact_name
+2026-03-04 14:42:13 | patch      | INFO    |   [filled] xfer_rules.timeout_sec
+2026-03-04 14:42:13 | patch      | INFO    |   [filled] xfer_rules.retry_count
+2026-03-04 14:42:13 | patch      | INFO    |   [updated] integrations
+2026-03-04 14:42:13 | patch      | INFO    |   [updated] aft_hrs_flow
+2026-03-04 14:42:13 | patch      | INFO    |   [filled] biz_hrs_flow
+2026-03-04 14:42:13 | patch      | INFO    |   [updated] open_qs
+2026-03-04 14:42:13 | patch      | INFO    | v2 memo saved    → outputs\accounts\ACCT-8219106F\v2\memo.json
+2026-03-04 14:42:13 | patch      | INFO    | changelog saved  → outputs\accounts\ACCT-8219106F\changelog.json
+2026-03-04 14:42:13 | prmpt_gen  | INFO    | gen agent spec | ACCT-8219106F | v2_onboard
+2026-03-04 14:42:30 | prmpt_gen  | INFO    | spec + prompt saved → outputs\accounts\ACCT-8219106F\v2
+2026-03-04 14:42:30 | task_push  | INFO    | pushing task | ACCT-8219106F | status: v2_done
+2026-03-04 14:42:31 | task_push  | INFO    | issue updated → #6 | https://github.com/ItzVirAj/clara-agent-ops-pipeline/issues/6
+2026-03-04 14:42:31 | run_onboard | INFO    | ═══ PIPELINE B DONE  | acct_id: ACCT-8219106F ═══
+2026-03-04 14:42:31 | run_batch  | INFO    | batch report saved → outputs\batch_report.json
+2026-03-04 14:42:31 | run_batch  | INFO    | ═══ BATCH DONE ═══
+2026-03-04 14:42:31 | run_batch  | INFO    | total: 5 | ok: 5 | failed: 0

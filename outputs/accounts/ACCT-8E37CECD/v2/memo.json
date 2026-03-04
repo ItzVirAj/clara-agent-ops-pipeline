@@ -1,0 +1,103 @@
+{
+  "acct_id": "ACCT-8E37CECD",
+  "co_name": "Apex Fire Protection",
+  "co_phone": "312-449-0100",
+  "co_addr": "4801 West Peterson Avenue, Chicago, Illinois 60646",
+  "timezone": "America/Chicago",
+  "biz_hrs": {
+    "mon": {
+      "open": "07:00",
+      "close": "17:00",
+      "active": true
+    },
+    "tue": {
+      "open": "07:00",
+      "close": "17:00",
+      "active": true
+    },
+    "wed": {
+      "open": "07:00",
+      "close": "17:00",
+      "active": true
+    },
+    "thu": {
+      "open": "07:00",
+      "close": "17:00",
+      "active": true
+    },
+    "fri": {
+      "open": "07:00",
+      "close": "17:00",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Fire alarm inspection and testing",
+    "sprinkler system installation and repair",
+    "suppression system maintenance",
+    "emergency service calls"
+  ],
+  "emrg_triggers": [
+    "fire emergency",
+    "sprinkler emergency"
+  ],
+  "emrg_routing": {
+    "primary_name": "Mike Russo",
+    "primary_ph": "312-449-0187",
+    "secondary_name": "Janet Lee",
+    "secondary_ph": "312-449-0291",
+    "order": "sequential"
+  },
+  "non_emrg_routing": {
+    "type": "main office line",
+    "contact_name": "receptionist",
+    "contact_ph": null,
+    "notes": "handles scheduling and quotes"
+  },
+  "xfer_rules": {
+    "timeout_sec": 30,
+    "retry_count": 2,
+    "fail_msg": "we're aware this is urgent and a technician will be in contact within 15 minutes."
+  },
+  "integrations": [
+    "ServiceTrade"
+  ],
+  "aft_hrs_flow": "If not a fire or sprinkler emergency, take a message and state callback first thing in the morning, no specific times promised.",
+  "biz_hrs_flow": "Ask for caller's name, property, and whether it's a new issue or follow-up on an existing job.",
+  "open_qs": [
+    "What is the company name?",
+    "What is the company's physical address?",
+    "What is the company's timezone (IANA format, e.g., America/New_York)?",
+    "What are the regular business hours (open and close times) for Monday?",
+    "What are the regular business hours (open and close times) for Tuesday?",
+    "What are the regular business hours (open and close times) for Wednesday?",
+    "What are the regular business hours (open and close times) for Thursday?",
+    "What are the regular business hours (open and close times) for Friday?",
+    "What services does the business provide?",
+    "What is the primary contact name for emergency routing?",
+    "What is the primary phone number for emergency routing?",
+    "What is the secondary contact name for emergency routing?",
+    "What is the secondary phone number for emergency routing?",
+    "What is the order of routing for emergencies (e.g., primary then secondary)?",
+    "What is the routing type for non-emergency calls (e.g., direct transfer, voicemail)?",
+    "What is the contact name for non-emergency routing?",
+    "What is the contact phone number for non-emergency routing?",
+    "Are there any specific notes for non-emergency routing?",
+    "What message should be played if a transfer fails after retries?",
+    "Are there any external systems or integrations that Clara needs to connect with?"
+  ],
+  "notes": null,
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-04T09:04:23.135139+00:00",
+  "updated_at": "2026-03-04T09:05:21.856302+00:00"
+}

@@ -1,0 +1,107 @@
+{
+  "acct_id": "ACCT-420DE3CD",
+  "patch_at": "2026-03-04T09:10:09.306437+00:00",
+  "v1_memo": "outputs\\accounts\\ACCT-420DE3CD\\v1\\memo.json",
+  "total_changes": 10,
+  "changes": [
+    {
+      "field": "co_phone",
+      "action": "filled",
+      "v1": null,
+      "v2": "602-881-0300"
+    },
+    {
+      "field": "svcs",
+      "action": "updated",
+      "v1": [
+        "Residential wiring",
+        "panel upgrades",
+        "commercial electrical",
+        "generator installation and service",
+        "EV charger installation",
+        "emergency callouts"
+      ],
+      "v2": [
+        "residential job",
+        "commercial job",
+        "EV charger installation"
+      ]
+    },
+    {
+      "field": "non_emrg_routing.type",
+      "action": "updated",
+      "v1": "transfer",
+      "v2": "job type routing"
+    },
+    {
+      "field": "non_emrg_routing.contact_name",
+      "action": "filled",
+      "v1": null,
+      "v2": "residential: scheduling, commercial: Tom"
+    },
+    {
+      "field": "non_emrg_routing.notes",
+      "action": "updated",
+      "v1": "Wife handles the scheduling side",
+      "v2": "Ask what type of job (residential or commercial) before routing. Commercial jobs route to Tom, residential to scheduling."
+    },
+    {
+      "field": "xfer_rules.retry_count",
+      "action": "filled",
+      "v1": null,
+      "v2": 1
+    },
+    {
+      "field": "xfer_rules.fail_msg",
+      "action": "updated",
+      "v1": "Say that we're aware of the issue and an electrician will call them back within 30 minutes guaranteed.",
+      "v2": "leave the callback message"
+    },
+    {
+      "field": "aft_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "For non-emergency calls after hours, tell them to call back during business hours (Monday to Friday 7:30 to 4:30) and do not collect information; just redirect."
+    },
+    {
+      "field": "biz_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "During hours, Clara should ask what type of job \u2014 residential or commercial \u2014 before routing. Commercial jobs come to Tom directly, residential goes to scheduling. If someone asks about EV charger installation, Clara should say we offer free quotes and ask if they want to schedule one."
+    },
+    {
+      "field": "open_qs",
+      "action": "updated",
+      "v1": [
+        "What is the company's main phone number?",
+        "What is the phone number for the office transfer during business hours?",
+        "How many times should the agent attempt to transfer a call before giving up?",
+        "What should the voice agent do with non-emergency calls received outside of business hours?"
+      ],
+      "v2": [
+        "What is the company's full legal name?",
+        "What is the company's physical address?",
+        "What is the business's timezone in IANA format (e.g., America/Los_Angeles)?",
+        "What are the specific triggers or keywords for an emergency call?",
+        "Who is the primary contact (name and phone number) for emergency routing?",
+        "Who is the secondary contact (name and phone number) for emergency routing, and what is the desired order if both are available?",
+        "What is the phone number for the scheduling department for residential jobs?",
+        "What is Tom's full name and phone number for commercial job routing?",
+        "Are there any specific integrations needed (e.g., CRM, calendar)?",
+        "What is the email address for notifications (e.g., admin@boltelectrical.com)?"
+      ]
+    }
+  ],
+  "open_qs_remaining": [
+    "What is the company's full legal name?",
+    "What is the company's physical address?",
+    "What is the business's timezone in IANA format (e.g., America/Los_Angeles)?",
+    "What are the specific triggers or keywords for an emergency call?",
+    "Who is the primary contact (name and phone number) for emergency routing?",
+    "Who is the secondary contact (name and phone number) for emergency routing, and what is the desired order if both are available?",
+    "What is the phone number for the scheduling department for residential jobs?",
+    "What is Tom's full name and phone number for commercial job routing?",
+    "Are there any specific integrations needed (e.g., CRM, calendar)?",
+    "What is the email address for notifications (e.g., admin@boltelectrical.com)?"
+  ]
+}

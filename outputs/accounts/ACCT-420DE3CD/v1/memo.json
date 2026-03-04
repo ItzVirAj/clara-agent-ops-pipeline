@@ -1,0 +1,95 @@
+{
+  "acct_id": "ACCT-420DE3CD",
+  "co_name": "Bolt Electrical Contractors",
+  "co_phone": null,
+  "co_addr": "3320 North 7th Street, Phoenix Arizona 85014",
+  "timezone": "America/Phoenix",
+  "biz_hrs": {
+    "mon": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "tue": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "wed": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "thu": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "fri": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Residential wiring",
+    "panel upgrades",
+    "commercial electrical",
+    "generator installation and service",
+    "EV charger installation",
+    "emergency callouts"
+  ],
+  "emrg_triggers": [
+    "Total power outage to a property",
+    "exposed live wiring that's a safety hazard",
+    "electrical fires or burning smell from panels",
+    "generator failures for commercial clients"
+  ],
+  "emrg_routing": {
+    "primary_name": "Tom Briggs",
+    "primary_ph": "602-881-0344",
+    "secondary_name": "Rick Solis",
+    "secondary_ph": "602-881-0512",
+    "order": [
+      "primary",
+      "secondary"
+    ]
+  },
+  "non_emrg_routing": {
+    "type": "transfer",
+    "contact_name": null,
+    "contact_ph": null,
+    "notes": "Wife handles the scheduling side"
+  },
+  "xfer_rules": {
+    "timeout_sec": 25,
+    "retry_count": null,
+    "fail_msg": "Say that we're aware of the issue and an electrician will call them back within 30 minutes guaranteed."
+  },
+  "integrations": [
+    "QuickBooks",
+    "Google calendar"
+  ],
+  "aft_hrs_flow": null,
+  "biz_hrs_flow": null,
+  "open_qs": [
+    "What is the company's main phone number?",
+    "What is the phone number for the office transfer during business hours?",
+    "How many times should the agent attempt to transfer a call before giving up?",
+    "What should the voice agent do with non-emergency calls received outside of business hours?"
+  ],
+  "notes": "Tom Briggs is the owner and main electrician. Rick Solis is his partner.",
+  "memo_ver": "v1_demo",
+  "created_at": "2026-03-04T09:09:15.524984+00:00",
+  "updated_at": null
+}

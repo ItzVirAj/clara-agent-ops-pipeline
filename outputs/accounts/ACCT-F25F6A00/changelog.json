@@ -1,0 +1,88 @@
+{
+  "acct_id": "ACCT-F25F6A00",
+  "patch_at": "2026-03-04T09:11:06.876866+00:00",
+  "v1_memo": "outputs\\accounts\\ACCT-F25F6A00\\v1\\memo.json",
+  "total_changes": 7,
+  "changes": [
+    {
+      "field": "co_name",
+      "action": "updated",
+      "v1": "Guardian Sprinkler Systems",
+      "v2": "Guardian"
+    },
+    {
+      "field": "co_phone",
+      "action": "filled",
+      "v1": null,
+      "v2": "404-512-0700"
+    },
+    {
+      "field": "xfer_rules.retry_count",
+      "action": "filled",
+      "v1": null,
+      "v2": 3
+    },
+    {
+      "field": "aft_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "Collect their name, number, and the property address. Tell them a Guardian representative will contact them next business day. Don't say morning specifically because sometimes we're in the field early."
+    },
+    {
+      "field": "biz_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "During hours, ask for the property address first \u2014 we cover the greater Atlanta metro area only. If it's outside our service area, politely let them know and suggest they contact a local provider."
+    },
+    {
+      "field": "open_qs",
+      "action": "updated",
+      "v1": [
+        "What is the main business phone number for Guardian Sprinkler Systems?",
+        "Is the emergency routing sequential (primary then secondary) or simultaneous?",
+        "What is the phone number for the office dispatcher?",
+        "How many times should the system retry the transfer before sending the fail message?",
+        "What is the specific call flow for calls received outside of regular business hours (e.g., direct to emergency routing, voicemail, IVR menu)?",
+        "What is the overall call flow for calls received during business hours (e.g., IVR, direct to dispatcher, other)?"
+      ],
+      "v2": [
+        "What is Guardian's physical address?",
+        "What are Guardian's business hours for each day of the week (Monday-Sunday)?",
+        "What specific services does Guardian provide?",
+        "What criteria define an emergency call?",
+        "Who is the primary contact for emergency transfers?",
+        "What is the phone number for the primary emergency contact?",
+        "Who is the secondary contact for emergency transfers?",
+        "What is the phone number for the secondary emergency contact?",
+        "What is the routing order for emergency contacts (e.g., primary, then secondary)?",
+        "What type of non-emergency routing should be configured (e.g., transfer, voicemail, email)?",
+        "Who is the contact person for non-emergency calls?",
+        "What is the phone number for the non-emergency contact?",
+        "Are there any specific notes for non-emergency call routing?",
+        "What is the exact callback message to be given if transfers fail?"
+      ]
+    },
+    {
+      "field": "notes",
+      "action": "filled",
+      "v1": null,
+      "v2": "Internal note: Do not mention ServiceTrade to callers."
+    }
+  ],
+  "open_qs_remaining": [
+    "What is Guardian's physical address?",
+    "What are Guardian's business hours for each day of the week (Monday-Sunday)?",
+    "What specific services does Guardian provide?",
+    "What criteria define an emergency call?",
+    "Who is the primary contact for emergency transfers?",
+    "What is the phone number for the primary emergency contact?",
+    "Who is the secondary contact for emergency transfers?",
+    "What is the phone number for the secondary emergency contact?",
+    "What is the routing order for emergency contacts (e.g., primary, then secondary)?",
+    "What type of non-emergency routing should be configured (e.g., transfer, voicemail, email)?",
+    "Who is the contact person for non-emergency calls?",
+    "What is the phone number for the non-emergency contact?",
+    "Are there any specific notes for non-emergency call routing?",
+    "What is the exact callback message to be given if transfers fail?"
+  ]
+}

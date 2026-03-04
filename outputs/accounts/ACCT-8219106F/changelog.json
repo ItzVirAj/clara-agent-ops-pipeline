@@ -1,0 +1,124 @@
+{
+  "acct_id": "ACCT-8219106F",
+  "patch_at": "2026-03-04T09:12:13.751308+00:00",
+  "v1_memo": "outputs\\accounts\\ACCT-8219106F\\v1\\memo.json",
+  "total_changes": 10,
+  "changes": [
+    {
+      "field": "co_phone",
+      "action": "filled",
+      "v1": null,
+      "v2": "214-773-0400"
+    },
+    {
+      "field": "emrg_triggers",
+      "action": "updated",
+      "v1": [
+        "AC goes completely out (with elderly people or young kids in house)",
+        "gas leak related to heating systems",
+        "carbon monoxide situations",
+        "commercial refrigeration failures for restaurants"
+      ],
+      "v2": [
+        "AC outages"
+      ]
+    },
+    {
+      "field": "non_emrg_routing.type",
+      "action": "updated",
+      "v1": "office line",
+      "v2": "transfer"
+    },
+    {
+      "field": "non_emrg_routing.contact_name",
+      "action": "filled",
+      "v1": null,
+      "v2": "Carlos"
+    },
+    {
+      "field": "xfer_rules.timeout_sec",
+      "action": "filled",
+      "v1": null,
+      "v2": 20
+    },
+    {
+      "field": "xfer_rules.retry_count",
+      "action": "filled",
+      "v1": null,
+      "v2": 2
+    },
+    {
+      "field": "integrations",
+      "action": "updated",
+      "v1": [
+        "Jobber"
+      ],
+      "v2": [
+        "office@swifthvac.com",
+        "sandra@swifthvac.com (for emergencies)"
+      ]
+    },
+    {
+      "field": "aft_hrs_flow",
+      "action": "updated",
+      "v1": "Tell them we have a technician on call and they will receive a call back within 20 minutes. And collect their name, number and address.",
+      "v2": "For non-emergencies after hours, collect their info and tell them we'll call back next business day. For emergencies, make it clear we take AC outages seriously especially in summer and be empathetic."
+    },
+    {
+      "field": "biz_hrs_flow",
+      "action": "filled",
+      "v1": null,
+      "v2": "During hours, ask for their zip code to know if they're in our service area before booking anything."
+    },
+    {
+      "field": "open_qs",
+      "action": "updated",
+      "v1": [
+        "What is the office phone number for non-emergency calls?",
+        "What is the preferred order for emergency routing (e.g., call primary, then secondary; or call both simultaneously)?",
+        "What is the timeout duration for call transfers in seconds?",
+        "How many times should the system attempt to retry a call transfer?",
+        "What is the general call flow for calls received during business hours?",
+        "What message should be played if a call transfer fails (during business hours)?"
+      ],
+      "v2": [
+        "What is the company's full name?",
+        "What is the company's full address?",
+        "What is the business's timezone (IANA format, e.g., America/Chicago)?",
+        "What are the business hours for Monday?",
+        "What are the business hours for Tuesday?",
+        "What are the business hours for Wednesday?",
+        "What are the business hours for Thursday?",
+        "What are the business hours for Friday?",
+        "What services does the business offer?",
+        "Who is the primary contact for emergency call routing?",
+        "What is the phone number for the primary emergency contact?",
+        "Is there a secondary contact for emergency call routing? If so, what is their name?",
+        "What is the phone number for the secondary emergency contact?",
+        "If multiple contacts, what is the preferred order for emergency call routing?",
+        "What is Carlos's phone number for non-emergency transfers?",
+        "What should the callback message say if the transfer fails?",
+        "Are there any specific integrations (e.g., CRM, scheduling software) Clara needs to connect with?"
+      ]
+    }
+  ],
+  "open_qs_remaining": [
+    "What is the company's full name?",
+    "What is the company's full address?",
+    "What is the business's timezone (IANA format, e.g., America/Chicago)?",
+    "What are the business hours for Monday?",
+    "What are the business hours for Tuesday?",
+    "What are the business hours for Wednesday?",
+    "What are the business hours for Thursday?",
+    "What are the business hours for Friday?",
+    "What services does the business offer?",
+    "Who is the primary contact for emergency call routing?",
+    "What is the phone number for the primary emergency contact?",
+    "Is there a secondary contact for emergency call routing? If so, what is their name?",
+    "What is the phone number for the secondary emergency contact?",
+    "If multiple contacts, what is the preferred order for emergency call routing?",
+    "What is Carlos's phone number for non-emergency transfers?",
+    "What should the callback message say if the transfer fails?",
+    "Are there any specific integrations (e.g., CRM, scheduling software) Clara needs to connect with?"
+  ]
+}

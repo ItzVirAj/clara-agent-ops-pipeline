@@ -1,0 +1,91 @@
+{
+  "acct_id": "ACCT-F25F6A00",
+  "co_name": "Guardian Sprinkler Systems",
+  "co_phone": null,
+  "co_addr": "1755 Commerce Drive Northwest, Atlanta Georgia 30318",
+  "timezone": "America/New_York",
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "17:00",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "Sprinkler system installation",
+    "inspection and testing",
+    "backflow preventer testing and repair",
+    "fire pump service",
+    "system monitoring"
+  ],
+  "emrg_triggers": [
+    "A sprinkler head that has activated unintentionally",
+    "any system that's showing a supervisory alarm or trouble signal that the property manager says is critical",
+    "backflow preventer failures during freeze events"
+  ],
+  "emrg_routing": {
+    "primary_name": "Ray Thornton",
+    "primary_ph": "404-512-0773",
+    "secondary_name": "David Park",
+    "secondary_ph": "404-512-0901",
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "transfer",
+    "contact_name": null,
+    "contact_ph": null,
+    "notes": "We have a dispatcher who handles scheduling."
+  },
+  "xfer_rules": {
+    "timeout_sec": 30,
+    "retry_count": null,
+    "fail_msg": "Please let them know that Guardian has a 24 hour emergency response team and someone will reach out within 15 minutes."
+  },
+  "integrations": [
+    "ServiceTrade"
+  ],
+  "aft_hrs_flow": null,
+  "biz_hrs_flow": null,
+  "open_qs": [
+    "What is the main business phone number for Guardian Sprinkler Systems?",
+    "Is the emergency routing sequential (primary then secondary) or simultaneous?",
+    "What is the phone number for the office dispatcher?",
+    "How many times should the system retry the transfer before sending the fail message?",
+    "What is the specific call flow for calls received outside of regular business hours (e.g., direct to emergency routing, voicemail, IVR menu)?",
+    "What is the overall call flow for calls received during business hours (e.g., IVR, direct to dispatcher, other)?"
+  ],
+  "notes": null,
+  "memo_ver": "v1_demo",
+  "created_at": "2026-03-04T09:10:21.181988+00:00",
+  "updated_at": null
+}

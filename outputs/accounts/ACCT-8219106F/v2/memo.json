@@ -1,0 +1,101 @@
+{
+  "acct_id": "ACCT-8219106F",
+  "co_name": "Swift HVAC Services",
+  "co_phone": "214-773-0400",
+  "co_addr": "9200 Carpenter Freeway, Dallas Texas 75247",
+  "timezone": "America/Chicago",
+  "biz_hrs": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00",
+      "active": true
+    },
+    "sat": {
+      "open": "09:00",
+      "close": "14:00",
+      "active": true
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "AC installation and repair",
+    "heating system service",
+    "duct cleaning",
+    "commercial refrigeration",
+    "preventive maintenance contracts"
+  ],
+  "emrg_triggers": [
+    "AC outages"
+  ],
+  "emrg_routing": {
+    "primary_name": "Sandra",
+    "primary_ph": "214-773-0482",
+    "secondary_name": "Carlos Mendez",
+    "secondary_ph": "214-773-0619",
+    "order": null
+  },
+  "non_emrg_routing": {
+    "type": "transfer",
+    "contact_name": "Carlos",
+    "contact_ph": null,
+    "notes": "We handle quotes and scheduling in-house."
+  },
+  "xfer_rules": {
+    "timeout_sec": 20,
+    "retry_count": 2,
+    "fail_msg": null
+  },
+  "integrations": [
+    "office@swifthvac.com",
+    "sandra@swifthvac.com (for emergencies)"
+  ],
+  "aft_hrs_flow": "For non-emergencies after hours, collect their info and tell them we'll call back next business day. For emergencies, make it clear we take AC outages seriously especially in summer and be empathetic.",
+  "biz_hrs_flow": "During hours, ask for their zip code to know if they're in our service area before booking anything.",
+  "open_qs": [
+    "What is the company's full name?",
+    "What is the company's full address?",
+    "What is the business's timezone (IANA format, e.g., America/Chicago)?",
+    "What are the business hours for Monday?",
+    "What are the business hours for Tuesday?",
+    "What are the business hours for Wednesday?",
+    "What are the business hours for Thursday?",
+    "What are the business hours for Friday?",
+    "What services does the business offer?",
+    "Who is the primary contact for emergency call routing?",
+    "What is the phone number for the primary emergency contact?",
+    "Is there a secondary contact for emergency call routing? If so, what is their name?",
+    "What is the phone number for the secondary emergency contact?",
+    "If multiple contacts, what is the preferred order for emergency call routing?",
+    "What is Carlos's phone number for non-emergency transfers?",
+    "What should the callback message say if the transfer fails?",
+    "Are there any specific integrations (e.g., CRM, scheduling software) Clara needs to connect with?"
+  ],
+  "notes": null,
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-04T09:11:21.216763+00:00",
+  "updated_at": "2026-03-04T09:12:13.751308+00:00"
+}

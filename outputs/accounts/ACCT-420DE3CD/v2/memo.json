@@ -1,0 +1,98 @@
+{
+  "acct_id": "ACCT-420DE3CD",
+  "co_name": "Bolt Electrical Contractors",
+  "co_phone": "602-881-0300",
+  "co_addr": "3320 North 7th Street, Phoenix Arizona 85014",
+  "timezone": "America/Phoenix",
+  "biz_hrs": {
+    "mon": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "tue": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "wed": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "thu": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "fri": {
+      "open": "07:30",
+      "close": "16:30",
+      "active": true
+    },
+    "sat": {
+      "open": null,
+      "close": null,
+      "active": false
+    },
+    "sun": {
+      "open": null,
+      "close": null,
+      "active": false
+    }
+  },
+  "svcs": [
+    "residential job",
+    "commercial job",
+    "EV charger installation"
+  ],
+  "emrg_triggers": [
+    "Total power outage to a property",
+    "exposed live wiring that's a safety hazard",
+    "electrical fires or burning smell from panels",
+    "generator failures for commercial clients"
+  ],
+  "emrg_routing": {
+    "primary_name": "Tom Briggs",
+    "primary_ph": "602-881-0344",
+    "secondary_name": "Rick Solis",
+    "secondary_ph": "602-881-0512",
+    "order": [
+      "primary",
+      "secondary"
+    ]
+  },
+  "non_emrg_routing": {
+    "type": "job type routing",
+    "contact_name": "residential: scheduling, commercial: Tom",
+    "contact_ph": null,
+    "notes": "Ask what type of job (residential or commercial) before routing. Commercial jobs route to Tom, residential to scheduling."
+  },
+  "xfer_rules": {
+    "timeout_sec": 25,
+    "retry_count": 1,
+    "fail_msg": "leave the callback message"
+  },
+  "integrations": [
+    "QuickBooks",
+    "Google calendar"
+  ],
+  "aft_hrs_flow": "For non-emergency calls after hours, tell them to call back during business hours (Monday to Friday 7:30 to 4:30) and do not collect information; just redirect.",
+  "biz_hrs_flow": "During hours, Clara should ask what type of job \u2014 residential or commercial \u2014 before routing. Commercial jobs come to Tom directly, residential goes to scheduling. If someone asks about EV charger installation, Clara should say we offer free quotes and ask if they want to schedule one.",
+  "open_qs": [
+    "What is the company's full legal name?",
+    "What is the company's physical address?",
+    "What is the business's timezone in IANA format (e.g., America/Los_Angeles)?",
+    "What are the specific triggers or keywords for an emergency call?",
+    "Who is the primary contact (name and phone number) for emergency routing?",
+    "Who is the secondary contact (name and phone number) for emergency routing, and what is the desired order if both are available?",
+    "What is the phone number for the scheduling department for residential jobs?",
+    "What is Tom's full name and phone number for commercial job routing?",
+    "Are there any specific integrations needed (e.g., CRM, calendar)?",
+    "What is the email address for notifications (e.g., admin@boltelectrical.com)?"
+  ],
+  "notes": "Tom Briggs is the owner and main electrician. Rick Solis is his partner.",
+  "memo_ver": "v2_onboard",
+  "created_at": "2026-03-04T09:09:15.524984+00:00",
+  "updated_at": "2026-03-04T09:10:09.306437+00:00"
+}
