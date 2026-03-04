@@ -1,0 +1,15 @@
+{
+  "batch_at": "2026-03-04T06:06:08.535529+00:00",
+  "total": 1,
+  "succeeded": 1,
+  "failed": 0,
+  "results": [
+    {
+      "prefix": "bens_electric",
+      "acct_id": "ACCT-F39B210A",
+      "status": "success",
+      "changes": 9,
+      "open_qs": 11
+    }
+  ]
+}
